@@ -3,7 +3,6 @@
 Static HTML/CSS, no build step. Open `index.html` locally, or upload the whole folder to the web root.
 
 ## Before launch
-- [ ] `termeni.html` (Termeni și condiții): the footer link on both pages is broken until it exists.
 - [ ] Social icons in the footer (Facebook, Instagram, Pinterest, Google Business Profile) point to `#` in `index.html` and `confidentialitate.html`. Add the real URLs and list them as `"sameAs": [...]` in the `Organization` JSON-LD.
 - [ ] Umami: `confidentialitate.html` says Umami analytics is used, but no Umami script is on the site or in the editor yet. Add it, or drop that section.
 - [ ] Editor link: all buttons point to `/editor`; confirm that's the live editor URL.
@@ -24,13 +23,14 @@ Static HTML/CSS, no build step. Open `index.html` locally, or upload the whole f
 
 ## Done
 - [x] Domain: `https://oglindasalii.ro/` in `index.html` (canonical, Open Graph, JSON-LD), `confidentialitate.html`, `robots.txt`, `sitemap.xml`.
-- [x] Privacy page `confidentialitate.html`.
+- [x] Privacy page `confidentialitate.html` and terms page `termeni.html`.
 - [x] Rock moved out of the template gallery; shown only as an example in the "Design personalizat" offer.
 - [x] Fonts self-hosted in `fonts/` (no Google Fonts request).
 - [x] Hero image compressed (`img/oglinda-salii-sevalet-gradina.jpg`, JPEG quality 78).
 
 ## Files
 - `index.html`: the page (SEO meta, social preview, structured data)
+- `confidentialitate.html`, `termeni.html`: privacy policy and terms (same header/footer as `index.html`; keep them in sync)
 - `css/style.css`: mobile-first styles; brand colours are in `:root`
 - `fonts/`: Cormorant Garamond + Inter woff2 (latin and latin-ext), the same @fontsource 5.3.0 files as the editor's font list (`oglinda-salii/src/lib/fonts.js`), with their OFL licenses
 - `img/`: templates, venue photos, `og-image.jpg` (social preview, 1200×630), logo mark and icons
