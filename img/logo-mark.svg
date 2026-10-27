@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 160" width="120" height="160" role="img" aria-label="Oglinda sălii">
+  <path d="M18 152 V62 A42 42 0 0 1 102 62 V152 Z" fill="none" stroke="#3B3444" stroke-width="3.5" stroke-linejoin="round"/>
+  <path d="M27 143 V63 A33 33 0 0 1 93 63 V143 Z" fill="none" stroke="#B08A57" stroke-width="1.5"/>
+  <path d="M38 52 L46 44 M38 62 L54 46" stroke="#B08A57" stroke-width="1.5" stroke-linecap="round"/>
+  <g fill="none" stroke="#3B3444" stroke-width="1.8">
+    <rect x="34" y="74" width="23" height="29" rx="3"/>
+    <rect x="63" y="74" width="23" height="29" rx="3"/>
+    <rect x="34" y="109" width="23" height="29" rx="3"/>
+    <rect x="63" y="109" width="23" height="29" rx="3"/>
+  </g>
+  <path d="M42 81 H49 M71 81 H78 M42 116 H49 M71 116 H78" stroke="#B08A57" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M39 89 H52 M40 95 H51 M68 89 H81 M69 95 H80 M39 124 H52 M40 130 H51 M68 124 H81 M69 130 H80" stroke="#3B3444" stroke-width="2" stroke-linecap="round"/>
+</svg>
