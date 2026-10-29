@@ -19,14 +19,14 @@ Static HTML/CSS, no build step. Open `index.html` locally, or upload the whole f
 
 ## Optional
 - [ ] Open Graph tags on `confidentialitate.html` (nicer link previews when shared).
-- [ ] Delete unused images: `img/presentare1.jpeg` (original of the hero), `img/oglinda-salii-suport-metalic.webp`.
+- [ ] Delete unused image `img/oglinda-salii-suport-metalic.webp`.
 
 ## Done
 - [x] Domain: `https://oglindasalii.ro/` in `index.html` (canonical, Open Graph, JSON-LD), `confidentialitate.html`, `robots.txt`, `sitemap.xml`.
 - [x] Privacy page `confidentialitate.html` and terms page `termeni.html`.
 - [x] Rock moved out of the template gallery; shown only as an example in the "Design personalizat" offer.
 - [x] Fonts self-hosted in `fonts/` (no Google Fonts request).
-- [x] Hero image compressed (`img/oglinda-salii-sevalet-gradina.jpg`, JPEG quality 78).
+- [x] Responsive WebP images (`srcset`) built by `scripts/images.sh`: Lighthouse mobile performance 73 → 85, desktop 100.
 
 ## Files
 - `index.html`: the page (SEO meta, social preview, structured data)
@@ -34,5 +34,7 @@ Static HTML/CSS, no build step. Open `index.html` locally, or upload the whole f
 - `css/style.css`: mobile-first styles; brand colours are in `:root`
 - `js/contact.js`: builds the email and phone links at runtime (`data-email`, `data-email-subject`, `data-phone`) so they aren't in the HTML source; change the contact details there
 - `fonts/`: Cormorant Garamond + Inter woff2 (latin and latin-ext), the same @fontsource 5.3.0 files as the editor's font list (`oglinda-salii/src/lib/fonts.js`), with their OFL licenses
-- `img/`: templates, venue photos, `og-image.jpg` (social preview, 1200×630), logo mark and icons
+- `img/src/`: original photos and template previews (not used by the pages directly)
+- `img/`: the sized WebP copies the pages use (`<name>-<width>.webp`, generated), `og-image.jpg` (social preview, 1200×630), logo mark and icons
+- `scripts/images.sh`: builds the `img/<name>-<width>.webp` copies from `img/src/` (needs `brew install webp`). To add or replace an image: put the original in `img/src/`, add a `make` line to the script, run `sh scripts/images.sh`, then add `srcset`/`sizes` to the `<img>` in the HTML
 - `favicon.ico`, `favicon.svg`, `site.webmanifest`, `robots.txt`, `sitemap.xml`
