@@ -19,11 +19,9 @@
 		var dotsBox = document.createElement('div')
 		dotsBox.className = 'carousel__dots'
 		var dots = []
-		slides.forEach(function (slide, i) {
-			slide.setAttribute('role', 'group')
-			slide.setAttribute('aria-roledescription', 'slide')
-			slide.setAttribute('aria-label', (i + 1) + ' din ' + n)
-			var dot = button('carousel__dot', 'Imaginea ' + (i + 1), '')
+		slides.forEach(function (_, i) {
+			var dot = button('carousel__dot', 'Imaginea ' + (i + 1) + ' din ' + n, '')
+			dot.setAttribute('aria-current', i === 0 ? 'true' : 'false')
 			dot.addEventListener('click', function () { go(i) })
 			dotsBox.appendChild(dot)
 			dots.push(dot)
@@ -40,8 +38,8 @@
 			var c = current()
 			dots.forEach(function (dot, i) { dot.setAttribute('aria-current', i === c ? 'true' : 'false') })
 		}
+		// The first dot starts active (set above), so nothing reads the layout until the visitor scrolls
 		track.addEventListener('scroll', sync, { passive: true })
-		sync()
 	})
 
 	function button(className, label, html) {
