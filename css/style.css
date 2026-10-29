@@ -188,7 +188,7 @@ p { margin: 0; }
 .card__frame--landscape img { aspect-ratio: 1.414 / 1; }
 .card__frame--portrait img { aspect-ratio: 1 / 1.414; }
 .card__meta { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
-.card__name { font-family: var(--serif); font-size: 22px; font-weight: 600; line-height: 1.2; }
+.card__name { font-family: var(--serif); font-size: 22px; font-weight: 600; line-height: 1.2;}
 .card__type { font-size: 13px; color: var(--ink-muted); white-space: nowrap; }
 @media (max-width: 559px) {
   .gallery--portrait { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 14px; }

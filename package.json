@@ -1,0 +1,11 @@
+{
+  "name": "oglindasalii-landing",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  },
+  "devDependencies": {
+    "csso": "5.0.5"
+  }
+}
