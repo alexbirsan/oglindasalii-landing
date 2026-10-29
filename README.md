@@ -32,6 +32,7 @@ Static HTML/CSS, no build step. Open `index.html` locally, or upload the whole f
 - `index.html`: the page (SEO meta, social preview, structured data)
 - `confidentialitate.html`, `termeni.html`: privacy policy and terms (same header/footer as `index.html`; keep them in sync)
 - `css/style.css`: mobile-first styles; brand colours are in `:root`
+- `js/contact.js`: builds the email and phone links at runtime (`data-email`, `data-email-subject`, `data-phone`) so they aren't in the HTML source; change the contact details there
 - `fonts/`: Cormorant Garamond + Inter woff2 (latin and latin-ext), the same @fontsource 5.3.0 files as the editor's font list (`oglinda-salii/src/lib/fonts.js`), with their OFL licenses
 - `img/`: templates, venue photos, `og-image.jpg` (social preview, 1200×630), logo mark and icons
 - `favicon.ico`, `favicon.svg`, `site.webmanifest`, `robots.txt`, `sitemap.xml`
