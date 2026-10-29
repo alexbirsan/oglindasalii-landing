@@ -34,9 +34,10 @@
   <link rel="preload" as="font" type="font/woff2" href="fonts/cormorant-garamond-latin-500-normal.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="fonts/inter-latin-400-normal.woff2" crossorigin>
 
-  <link rel="preload" as="image" href="img/oglinda-salii-sevalet-gradina-1195.webp" imagesrcset="img/oglinda-salii-sevalet-gradina-600.webp 600w, img/oglinda-salii-sevalet-gradina-900.webp 900w, img/oglinda-salii-sevalet-gradina-1195.webp 1195w" imagesizes="(min-width: 1200px) 548px, (min-width: 960px) calc(50vw - 52px), calc(100vw - 40px)" fetchpriority="high">
+  <link rel="preload" as="image" href="img/oglinda-salii-sevalet-lemn-1200.webp" imagesrcset="img/oglinda-salii-sevalet-lemn-600.webp 600w, img/oglinda-salii-sevalet-lemn-900.webp 900w, img/oglinda-salii-sevalet-lemn-1200.webp 1200w" imagesizes="(min-width: 1200px) 548px, (min-width: 960px) calc(50vw - 52px), calc(100vw - 40px)" fetchpriority="high">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/contact.js" defer></script>
+  <script src="js/carousel.js" defer></script>
 
   <!-- Structured data -->
   <script type="application/ld+json">
@@ -122,8 +123,8 @@
           <p class="hero__note">Fără cont și fără adresă de email.</p>
         </div>
         <div class="hero__media">
-          <img src="img/oglinda-salii-sevalet-gradina-1195.webp" srcset="img/oglinda-salii-sevalet-gradina-600.webp 600w, img/oglinda-salii-sevalet-gradina-900.webp 900w, img/oglinda-salii-sevalet-gradina-1195.webp 1195w" sizes="(min-width: 1200px) 548px, (min-width: 960px) calc(50vw - 52px), calc(100vw - 40px)" width="1195" height="896" fetchpriority="high"
-               alt="Oglinda sălii printată, cu frunze în acuarelă, pe un șevalet de lemn într-o grădină, la o nuntă în aer liber">
+          <img src="img/oglinda-salii-sevalet-lemn-1200.webp" srcset="img/oglinda-salii-sevalet-lemn-600.webp 600w, img/oglinda-salii-sevalet-lemn-900.webp 900w, img/oglinda-salii-sevalet-lemn-1200.webp 1200w" sizes="(min-width: 1200px) 548px, (min-width: 960px) calc(50vw - 52px), calc(100vw - 40px)" width="1200" height="900" fetchpriority="high"
+               alt="Oglinda sălii printată, cu numele mirilor într-un hexagon auriu și invitații împărțiți pe 8 mese, pe un șevalet de lemn">
         </div>
       </div>
     </section>
@@ -163,7 +164,7 @@
             <h2 class="h2" id="titlu-sabloane">Șabloane pentru oglinda sălii</h2>
             <p class="muted">Alege stilul nunții voastre. Fiecare șablon se deschide în editor cu nume de exemplu, ca să vezi imediat cum arată.</p>
           </div>
-          <a class="link-arrow" href="/editor">Toate șabloanele →</a>
+          <a class="link-arrow" href="/editor">Încearcă editorul →</a>
         </div>
 
         <ul class="gallery gallery--landscape">
@@ -267,14 +268,35 @@
           <div class="offer__copy">
             <p class="eyebrow">Design personalizat</p>
             <h2 class="h2 h2--small" id="titlu-design">Vreți un design doar al vostru?</h2>
-            <p>Dacă nu găsiți stilul potrivit printre șabloane, desenăm oglinda sălii de la zero, după tema nunții voastre. Putem face și un logo cu inițialele mirilor, pe care îl folosiți pe plan, invitații și meniuri.</p>
+            <p>Desenăm oglinda sălii de la zero, după tema nunții voastre. Realizăm și invitațiile, meniurile și numerele de masă în același stil, plus un logo personalizat, inspirat din povestea, pasiunile sau hobby-urile voastre, ca totul să arate unitar.</p>
             <a class="btn btn--lg" href="#contact" data-email-subject="Design personalizat pentru nuntă">Cere un design personalizat</a>
           </div>
-          <figure class="offer__example">
-            <img src="img/sablon-rock-900.webp" srcset="img/sablon-rock-500.webp 500w, img/sablon-rock-700.webp 700w, img/sablon-rock-900.webp 900w" sizes="(min-width: 1200px) 484px, (min-width: 900px) calc(50vw - 120px), calc(100vw - 100px)" width="900" height="637" loading="lazy" decoding="async"
-                 alt="Oglinda sălii cu temă rock, desenată la comandă: mesele sunt viniluri numerotate, fiecare cu numele unei trupe">
-            <figcaption>Exemplu: oglinda sălii desenată pentru o nuntă cu temă rock</figcaption>
-          </figure>
+          <!-- Carousel: add a slide by copying a <figure> (js/carousel.js builds the dots and arrows) -->
+          <div class="offer__example carousel" role="region" aria-roledescription="carousel" aria-label="Exemple de design personalizat">
+            <div class="carousel__track">
+              <figure class="carousel__slide">
+                <img src="img/invitatie-personalizata-900.webp" srcset="img/invitatie-personalizata-500.webp 500w, img/invitatie-personalizata-700.webp 700w, img/invitatie-personalizata-900.webp 900w" sizes="(min-width: 1200px) 484px, (min-width: 900px) calc(50vw - 120px), calc(100vw - 100px)" width="900" height="1530" loading="lazy" decoding="async"
+                     style="object-position: 50% 28%"
+                     alt="Mirele ține în mâini invitația de nuntă personalizată, cu numele mirilor într-un hexagon auriu cu frunze">
+                <figcaption>Exemplu: invitație de nuntă personalizată</figcaption>
+              </figure>
+              <figure class="carousel__slide">
+                <img src="img/sablon-rock-900.webp" srcset="img/sablon-rock-500.webp 500w, img/sablon-rock-700.webp 700w, img/sablon-rock-900.webp 900w" sizes="(min-width: 1200px) 484px, (min-width: 900px) calc(50vw - 120px), calc(100vw - 100px)" width="900" height="637" loading="lazy" decoding="async"
+                     alt="Oglinda sălii cu temă rock, desenată la comandă: mesele sunt viniluri numerotate, fiecare cu numele unei trupe">
+                <figcaption>Exemplu: oglinda sălii desenată pentru o nuntă cu temă rock</figcaption>
+              </figure>
+              <figure class="carousel__slide">
+                <img src="img/nunta-masa-meniu-900.webp" srcset="img/nunta-masa-meniu-500.webp 500w, img/nunta-masa-meniu-700.webp 700w, img/nunta-masa-meniu-900.webp 900w" sizes="(min-width: 1200px) 484px, (min-width: 900px) calc(50vw - 120px), calc(100vw - 100px)" width="900" height="637" loading="lazy" decoding="async"
+                     alt="Meniu de nuntă personalizat, cu chenar auriu și frunze, pe masa festivă lângă un platou cu covrigei">
+                <figcaption>Exemplu: meniu de nuntă personalizat</figcaption>
+              </figure>
+              <figure class="carousel__slide">
+                <img src="img/numar-masa-nunta-900.webp" srcset="img/numar-masa-nunta-500.webp 500w, img/numar-masa-nunta-700.webp 700w, img/numar-masa-nunta-900.webp 900w" sizes="(min-width: 1200px) 484px, (min-width: 900px) calc(50vw - 120px), calc(100vw - 100px)" width="900" height="637" loading="lazy" decoding="async"
+                     alt="Masă rotundă de nuntă aranjată, cu numărul mesei pe un suport de lemn lângă aranjamentul floral">
+                <figcaption>Exemplu: număr de masă personalizat</figcaption>
+              </figure>
+            </div>
+          </div>
         </div>
       </div>
     </section>

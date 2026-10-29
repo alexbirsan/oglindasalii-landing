@@ -232,6 +232,32 @@ p { margin: 0; }
 }
 .offer__example figcaption { font-size: 14px; color: var(--ink-muted); }
 
+/* Carousel: a swipeable scroll-snap strip; js/carousel.js adds the arrows and dots.
+   The track's padding (cancelled by negative margins) leaves room for the image shadow inside the scroll area. */
+.carousel { min-width: 0; }
+.carousel__track {
+  position: relative;
+  display: grid; grid-auto-flow: column; grid-auto-columns: 100%; gap: 48px;
+  overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain;
+  padding: 8px 16px 40px; margin: -8px -16px -28px; scroll-padding: 0 16px;
+  scrollbar-width: none;
+}
+.carousel__track::-webkit-scrollbar { display: none; }
+.carousel__slide { margin: 0; display: flex; flex-direction: column; gap: 10px; scroll-snap-align: start; }
+.carousel__nav { display: flex; align-items: center; justify-content: center; gap: 12px; position: relative; }
+.carousel__nav[hidden] { display: none; }
+.carousel__btn {
+  width: 40px; height: 40px; display: grid; place-items: center;
+  border: 1px solid var(--line); border-radius: 50%; background: var(--surface); color: var(--plum);
+  cursor: pointer; transition: border-color .2s;
+}
+.carousel__btn:hover { border-color: var(--plum-soft); }
+.carousel__btn svg { width: 18px; height: 18px; }
+.carousel__dots { display: flex; }
+.carousel__dot { width: 24px; height: 24px; padding: 0; border: 0; background: none; cursor: pointer; display: grid; place-items: center; }
+.carousel__dot::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #C9BFCB; transition: background .2s; }
+.carousel__dot[aria-current="true"]::before { background: var(--plum); }
+
 /* FAQ */
 .faq { max-width: 800px; margin: 0 auto; }
 .faq__list { border-top: 1px solid var(--line); margin-top: 32px; }
