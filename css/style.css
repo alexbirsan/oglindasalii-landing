@@ -169,6 +169,29 @@ p { margin: 0; }
 }
 @media (min-width: 960px) { .hero__media img { border-radius: 20px; } }
 
+/* Tutorial video. The section has no top padding, so the margin keeps its heading clear of the sticky header. */
+.tutorial { scroll-margin-top: 92px; }
+.video {
+  position: relative; aspect-ratio: 16 / 9; overflow: hidden;
+  background: var(--plum); border-radius: 12px; box-shadow: 0 16px 40px rgba(60, 50, 40, .16);
+}
+@media (min-width: 960px) { .video { border-radius: 20px; } }
+.video iframe, .video__play { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video__play { display: grid; place-items: center; padding: 0; background: none; cursor: pointer; }
+/* Inside the rounded corners, which would clip the default outline */
+.video__play:focus-visible { outline-color: #fff; outline-offset: -6px; border-radius: 12px; }
+/* hqdefault.jpg is 4:3 with black bars above and below the 16:9 picture; cover crops them off */
+.video__play picture, .video__play img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.video__icon {
+  position: relative; display: grid; place-items: center;
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--plum); color: #fff; border: 2px solid #B08A57;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .3); transition: background .2s, transform .2s;
+}
+@media (min-width: 768px) { .video__icon { width: 88px; height: 88px; } }
+.video__icon svg { width: 55%; height: 55%; }
+.video__play:hover .video__icon { background: #B08A57; transform: scale(1.06); }
+
 /* Steps */
 .steps { display: grid; gap: 32px; margin: 0; padding: 0; list-style: none; }
 @media (min-width: 768px) { .steps { grid-template-columns: repeat(3, 1fr); gap: 40px; } }

@@ -39,6 +39,7 @@ The host (Netlify / Cloudflare Pages / Vercel) builds the site on every push to 
 - `confidentialitate.html`, `termeni.html`: privacy policy and terms (same header/footer as `index.html`; keep them in sync)
 - `css/style.css`: mobile-first styles; brand colours are in `:root`. Every page must link it exactly as `<link rel="stylesheet" href="css/style.css">` (the build replaces that tag with the inlined CSS)
 - `js/carousel.js`: arrows and dots for `.carousel` (the "Design personalizat" photos); add a slide by copying a `<figure class="carousel__slide">`
+- `js/video.js`: click-to-play for `.video` (the tutorial): loads the YouTube iframe only on click, using `data-video-id` and `data-video-title` from the HTML
 - `js/contact.js`: builds the email and phone links at runtime (`data-email`, `data-email-subject`, `data-phone`) so they aren't in the HTML source; change the contact details there
 - `fonts/`: Cormorant Garamond + Inter woff2 (latin and latin-ext), the same @fontsource 5.3.0 files as the editor's font list (`oglinda-salii/src/lib/fonts.js`), with their OFL licenses
 - `img/src/`: original photos and template previews (not used by the pages directly)
