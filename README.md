@@ -10,15 +10,15 @@ The host (Netlify / Cloudflare Pages / Vercel) builds the site on every push to 
 `npm run build` (`scripts/build.mjs`) copies the site into `dist/` and inlines a minified `css/style.css` into every page, which saves a render-blocking request on mobile. The source files are never changed, so keep editing `css/style.css` as usual. To check the built site locally: `npm install` once, then `npm run build` and open `dist/index.html`.
 
 ## Before launch
-- [ ] Social icons in the footer (Facebook, Instagram, Pinterest, Google Business Profile) point to `#` in `index.html` and `confidentialitate.html`. Add the real URLs and list them as `"sameAs": [...]` in the `Organization` JSON-LD.
-- [ ] Umami: `confidentialitate.html` says Umami analytics is used, but no Umami script is on the site or in the editor yet. Add it, or drop that section.
-- [ ] Editor link: all buttons point to `/editor`; confirm that's the live editor URL.
+- [x] Social icons in the footer (Facebook, Instagram, Pinterest, YouTube) link to the real profiles on every page and are listed as `"sameAs": [...]` in the `Organization` JSON-LD.
+- [x] Umami: `confidentialitate.html` says Umami analytics is used, but no Umami script is on the site or in the editor yet. Add it, or drop that section.
+- [x] Editor link: all buttons point to `/editor`; confirm that's the live editor URL.
 - [ ] Editor templates: remove Rock from the template list in the editor project (`oglinda-salii`).
 - [ ] Rock example image: band logos and cartoon-style characters belong to others; consider a version without them.
 
 ## After going live
 - [ ] Add the site to Google Search Console and submit `sitemap.xml`.
-- [ ] Set up a Google Business Profile, then link it from the Google icon in the footer.
+- [ ] Set up a Google Business Profile, then add a Google icon with its link to the footer social list (removed until then).
 
 ## Later (accounts/email after the beta)
 - [ ] Update `confidentialitate.html`, the "Trebuie să-mi fac cont?" FAQ (+ JSON-LD) and the hero note.
