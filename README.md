@@ -47,4 +47,5 @@ The host (Netlify / Cloudflare Pages / Vercel) builds the site on every push to 
 - `scripts/images.sh`: builds the `img/<name>-<width>.webp` copies from `img/src/` (needs `brew install webp`). To add or replace an image: put the original in `img/src/`, add a `make` line to the script, run `sh scripts/images.sh`, then add `srcset`/`sizes` to the `<img>` in the HTML
 - `scripts/build.mjs`, `package.json`: the deploy build (see Deploy). `dist/` and `node_modules/` are generated and git-ignored
 - `scripts/unused-images.sh`: lists files in `img/` no page uses; `--delete` removes them
+- `_headers`: caches `img/` for a year as immutable (Netlify / Cloudflare Pages; Vercel ignores this file), so give a changed image a new file name
 - `favicon.ico`, `favicon.svg`, `site.webmanifest`, `robots.txt`, `sitemap.xml`

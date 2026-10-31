@@ -139,7 +139,7 @@
       </div>
     </section>
 
-    <!-- Cum funcționează: js/video.js swaps the thumbnail for the YouTube player on click, so nothing from YouTube but the image loads before that -->
+    <!-- Cum funcționează: js/video.js swaps the thumbnail for the YouTube player on click, so nothing from YouTube loads before that -->
     <section class="section section--white" id="cum-functioneaza" aria-labelledby="titlu-pasi">
       <div class="wrap">
         <div class="section-head">
@@ -148,10 +148,7 @@
         </div>
         <div class="video" id="tutorial" data-video-id="r75eQard6U8" data-video-title="Cum faci oglinda sălii pentru nuntă, tutorial complet">
           <button class="video__play" type="button" aria-label="Pornește tutorialul video" data-umami-event="tutorial-play">
-            <picture>
-              <source media="(min-width: 768px)" srcset="https://i.ytimg.com/vi/r75eQard6U8/maxresdefault.jpg">
-              <img src="https://i.ytimg.com/vi/r75eQard6U8/hqdefault.jpg" width="480" height="360" loading="lazy" decoding="async" alt="">
-            </picture>
+            <img src="img/tutorial-960.webp" srcset="img/tutorial-480.webp 480w, img/tutorial-960.webp 960w, img/tutorial-1280.webp 1280w" sizes="(min-width: 1200px) 1152px, calc(100vw - 40px)" width="1280" height="720" loading="lazy" decoding="async" alt="">
             <span class="video__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.5v13l10.5-6.5z"/></svg></span>
           </button>
         </div>

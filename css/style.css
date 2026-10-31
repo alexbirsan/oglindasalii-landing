@@ -181,8 +181,7 @@ p { margin: 0; }
 .video__play { display: grid; place-items: center; padding: 0; background: none; cursor: pointer; }
 /* Inside the rounded corners, which would clip the default outline */
 .video__play:focus-visible { outline-color: #fff; outline-offset: -6px; border-radius: 12px; }
-/* hqdefault.jpg is 4:3 with black bars above and below the 16:9 picture; cover crops them off */
-.video__play picture, .video__play img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.video__play img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .video__icon {
   position: relative; display: grid; place-items: center;
   width: 56px; height: 56px; border-radius: 50%;

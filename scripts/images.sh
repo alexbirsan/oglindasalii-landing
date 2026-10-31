@@ -45,3 +45,6 @@ crop="0 1745 3648 2580"
 make nunta-masa-meniu.jpg         80 500 700 900
 crop="0 0 2503 1770"
 make numar-masa-nunta.jpg         80 500 700 900
+
+# Tutorial video thumbnail (original: https://i.ytimg.com/vi/r75eQard6U8/maxresdefault.jpg)
+make tutorial.jpg 75 480 960 1280

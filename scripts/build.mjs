@@ -19,7 +19,7 @@ for (const dir of ['fonts', 'img', 'js']) {
 		filter: (src) => !src.endsWith('.DS_Store') && !src.startsWith(join(root, 'img', 'src')),
 	})
 }
-for (const file of ['robots.txt', 'sitemap.xml', 'site.webmanifest', 'favicon.ico', 'favicon.svg']) {
+for (const file of ['_headers', 'robots.txt', 'sitemap.xml', 'site.webmanifest', 'favicon.ico', 'favicon.svg']) {
 	if (existsSync(join(root, file))) cpSync(join(root, file), join(dist, file))
 }
 
