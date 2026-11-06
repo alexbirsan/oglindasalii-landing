@@ -13,8 +13,8 @@ The host (Netlify / Cloudflare Pages / Vercel) builds the site on every push to 
 - [x] Social icons in the footer (Facebook, Instagram, Pinterest, YouTube) link to the real profiles on every page and are listed as `"sameAs": [...]` in the `Organization` JSON-LD.
 - [x] Umami: `confidentialitate.html` says Umami analytics is used, but no Umami script is on the site or in the editor yet. Add it, or drop that section.
 - [x] Editor link: all buttons point to `/editor`; confirm that's the live editor URL.
+- [ ] Tutorial clips: export the 4 clips + posters from Remotion into `video/` (see Files). Until then the "Cum funcționează" tabs show an empty frame.
 - [ ] Editor templates: remove Rock from the template list in the editor project (`oglinda-salii`).
-- [ ] Rock example image: band logos and cartoon-style characters belong to others; consider a version without them.
 
 ## After going live
 - [ ] Add the site to Google Search Console and submit `sitemap.xml`.
@@ -30,7 +30,7 @@ The host (Netlify / Cloudflare Pages / Vercel) builds the site on every push to 
 ## Done
 - [x] Domain: `https://oglindasalii.ro/` in `index.html` (canonical, Open Graph, JSON-LD), `confidentialitate.html`, `robots.txt`, `sitemap.xml`.
 - [x] Privacy page `confidentialitate.html` and terms page `termeni.html`.
-- [x] Rock moved out of the template gallery; shown only as an example in the "Design personalizat" offer.
+- [x] Rock removed from the landing page (template gallery and "Design personalizat" carousel).
 - [x] Fonts self-hosted in `fonts/` (no Google Fonts request).
 - [x] Responsive WebP images (`srcset`) built by `scripts/images.sh`: Lighthouse mobile performance 73 → 85, desktop 100.
 
@@ -39,7 +39,8 @@ The host (Netlify / Cloudflare Pages / Vercel) builds the site on every push to 
 - `confidentialitate.html`, `termeni.html`: privacy policy and terms (same header/footer as `index.html`; keep them in sync)
 - `css/style.css`: mobile-first styles; brand colours are in `:root`. Every page must link it exactly as `<link rel="stylesheet" href="css/style.css">` (the build replaces that tag with the inlined CSS)
 - `js/carousel.js`: arrows and dots for `.carousel` (the "Design personalizat" photos); add a slide by copying a `<figure class="carousel__slide">`
-- `js/video.js`: click-to-play for `.video` (the tutorial): loads the YouTube iframe only on click, using `data-video-id` and `data-video-title` from the HTML
+- `js/tabs.js`: the "Cum funcționează" tabs (`[data-tabs]`): loads a clip only once the section is on screen, plays the tabs in order until the visitor picks one, then loops that one
+- `video/`: the tutorial clips (made in Remotion), one per tab: `<name>.mp4` (H.264, 1280×720, no audio, ideally under ~1.5 MB) and `<name>.webp` poster (first frame, e.g. `npx remotion still`). Names: `design`, `mese`, `font`, `pdf` (see `data-src`/`poster` in `index.html`). Cached for a year like `img/`, so give a changed clip a new file name
 - `js/contact.js`: builds the email and phone links at runtime (`data-email`, `data-email-subject`, `data-phone`) so they aren't in the HTML source; change the contact details there
 - `fonts/`: Cormorant Garamond + Inter woff2 (latin and latin-ext), the same @fontsource 5.3.0 files as the editor's font list (`oglinda-salii/src/lib/fonts.js`), with their OFL licenses
 - `img/src/`: original photos and template previews (not used by the pages directly)

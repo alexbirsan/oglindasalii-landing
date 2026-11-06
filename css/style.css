@@ -148,7 +148,7 @@ p { margin: 0; }
 .nav { display: flex; align-items: center; gap: 24px; font-size: 15px; }
 .nav__link { display: none; color: #4F4F4F; text-decoration: none; padding: 10px 0; }
 .nav__link:hover { color: var(--plum); }
-@media (min-width: 860px) { .nav__link { display: inline; } }
+@media (min-width: 1000px) { .nav__link { display: inline; } }
 
 /* Hero */
 .hero { padding: 32px 0 var(--section); }
@@ -162,6 +162,8 @@ p { margin: 0; }
 .hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; }
 .hero__note { font-size: 14px; color: var(--ink-muted); }
 .hero__note--mobile { display: none; }
+.hero__custom { font-size: 15px; color: var(--ink-soft); padding-top: 16px; border-top: 1px solid var(--line); }
+.hero__custom a { color: var(--plum); font-weight: 500; }
 @media (max-width: 900px) { .hero__note--mobile { display: block; } }
 .hero__media img {
   width: 100%; aspect-ratio: 4 / 3; object-fit: cover;
@@ -169,35 +171,38 @@ p { margin: 0; }
 }
 @media (min-width: 960px) { .hero__media img { border-radius: 20px; } }
 
-/* Tutorial video. scroll-margin-top keeps it clear of the sticky header when a #tutorial link lands on it. */
-.video {
-  position: relative; aspect-ratio: 16 / 9; overflow: hidden;
-  scroll-margin-top: 92px; margin-bottom: 40px;
-  background: var(--plum); border-radius: 12px; box-shadow: 0 16px 40px rgba(60, 50, 40, .16);
+/* Tutorial tabs (js/tabs.js). Phones: clip on top, tabs below; desktop: tabs on the left. */
+.tabs { display: grid; gap: 20px; }
+@media (min-width: 900px) {
+  .tabs { grid-template-columns: minmax(0, 1fr) minmax(0, 1.8fr); gap: 40px; align-items: center; }
 }
-@media (min-width: 768px) { .video { margin-bottom: 56px; } }
-@media (min-width: 960px) { .video { border-radius: 20px; } }
-.video iframe, .video__play { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-.video__play { display: grid; place-items: center; padding: 0; background: none; cursor: pointer; }
-/* Inside the rounded corners, which would clip the default outline */
-.video__play:focus-visible { outline-color: #fff; outline-offset: -6px; border-radius: 12px; }
-.video__play img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.video__icon {
-  position: relative; display: grid; place-items: center;
-  width: 56px; height: 56px; border-radius: 50%;
-  background: var(--plum); color: #fff; border: 2px solid #B08A57;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, .3); transition: background .2s, transform .2s;
+.tabs__panels { order: -1; }
+@media (min-width: 900px) { .tabs__panels { order: 0; } }
+.tabs__panel video {
+  display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover;
+  background: var(--plum-tint); border-radius: 12px; box-shadow: 0 16px 40px rgba(60, 50, 40, .16);
 }
-@media (min-width: 768px) { .video__icon { width: 88px; height: 88px; } }
-.video__icon svg { width: 55%; height: 55%; }
-.video__play:hover .video__icon { background: #B08A57; transform: scale(1.06); }
-
-/* Steps */
-.steps { display: grid; gap: 32px; margin: 0; padding: 0; list-style: none; }
-@media (min-width: 768px) { .steps { grid-template-columns: repeat(3, 1fr); gap: 40px; } }
-.step { display: flex; flex-direction: column; gap: 10px; }
-.step__num { font-family: var(--serif); font-size: 52px; line-height: 1; color: var(--gold); }
-.step h3 { font-size: 19px; font-weight: 600; }
+@media (min-width: 960px) { .tabs__panel video { border-radius: 16px; } }
+.tabs__list { display: flex; flex-direction: column; gap: 8px; }
+.tab {
+  position: relative; overflow: hidden; display: flex; gap: 16px; width: 100%;
+  padding: 16px 20px; text-align: left; font: inherit; color: var(--ink); cursor: pointer;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+  transition: background .2s, border-color .2s;
+}
+.tab:hover { border-color: var(--plum-soft); }
+.tab[aria-selected="true"] { background: var(--plum-tint); border-color: transparent; }
+.tab__num { flex: none; width: 20px; font-family: var(--serif); font-size: 30px; line-height: 1; color: var(--gold); }
+.tab__text { display: flex; flex-direction: column; gap: 6px; }
+.tab__title { font-size: 17px; font-weight: 600; }
+.tab__desc { display: none; font-size: 15px; color: var(--ink-soft); }
+.tab[aria-selected="true"] .tab__desc { display: block; }
+/* --p (0–1) is how far the clip has played, set by js/tabs.js */
+.tab__progress {
+  position: absolute; left: 0; bottom: 0; width: 100%; height: 3px;
+  background: var(--gold); transform-origin: left; transform: scaleX(var(--p, 0));
+}
+.tab[aria-selected="false"] .tab__progress { display: none; }
 
 /* Gallery */
 .gallery-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 8px 16px; margin-bottom: 40px; }
@@ -221,10 +226,8 @@ p { margin: 0; }
   .gallery--portrait .card__meta { flex-direction: column; gap: 0; }
 }
 
-/* Photos at the venue */
-.photos { display: grid; gap: 20px; }
-@media (min-width: 700px) { .photos { grid-template-columns: 1fr 1fr; gap: 24px; } }
-.photos img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 12px; }
+/* Section links land clear of the sticky header */
+#cum-functioneaza, #sabloane, #design-personalizat { scroll-margin-top: 68px; }
 
 /* Features */
 .features { display: grid; gap: 20px; margin: 0; padding: 0; list-style: none; }

@@ -29,22 +29,18 @@ make() {
 crop="0 1450 3078 2308"
 make oglinda-salii-sevalet-lemn.jpg     80 600 900 1200
 make oglinda-salii-rama-aurie.webp      80 600 900 1200
-make oglinda-salii-suport-alb.webp      80 600 800 1000
 
 # Templates (quality 85: thin lines and small text)
 make sablon-hexagon-auriu.webp  85 450 650 900
 make sablon-botanic.webp        85 450 650 900
 make sablon-miri-ilustrati.webp 85 450 650 900
-make sablon-rock.webp           85 500 700 900
 make sablon-roz-clasic.webp     85 300 495
 make sablon-floral-auriu.webp   85 300 495
 
-# Custom-design carousel photos (shown in the same landscape frame as Rock, so the same widths; crops match that frame)
+# Custom-design carousel photos (landscape frame, 500/700/900 widths; crops match that frame)
 make invitatie-personalizata.webp 80 500 700 900
 crop="0 1745 3648 2580"
 make nunta-masa-meniu.jpg         80 500 700 900
 crop="0 0 2503 1770"
 make numar-masa-nunta.jpg         80 500 700 900
 
-# Tutorial video thumbnail (original: https://i.ytimg.com/vi/r75eQard6U8/maxresdefault.jpg)
-make tutorial.jpg 75 480 960 1280

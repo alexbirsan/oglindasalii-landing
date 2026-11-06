@@ -1,5 +1,5 @@
 // Builds the site into dist/ for deploying: the pages, with css/style.css minified and inlined
-// into each one (saves a render-blocking request on mobile), plus fonts/, img/ (without img/src/), js/
+// into each one (saves a render-blocking request on mobile), plus fonts/, img/ (without img/src/), js/, video/
 // and the root files. The source files are not changed, so keep editing css/style.css as usual.
 //   npm run build        (the host runs this on every push; publish directory: dist)
 import { cpSync, existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
@@ -13,7 +13,8 @@ const link = '<link rel="stylesheet" href="css/style.css">'
 rmSync(dist, { recursive: true, force: true })
 mkdirSync(dist)
 
-for (const dir of ['fonts', 'img', 'js']) {
+for (const dir of ['fonts', 'img', 'js', 'video']) {
+	if (!existsSync(join(root, dir))) continue
 	cpSync(join(root, dir), join(dist, dir), {
 		recursive: true,
 		filter: (src) => !src.endsWith('.DS_Store') && !src.startsWith(join(root, 'img', 'src')),

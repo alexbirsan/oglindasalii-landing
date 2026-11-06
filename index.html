@@ -38,7 +38,7 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="js/contact.js" defer></script>
   <script src="js/carousel.js" defer></script>
-  <script src="js/video.js" defer></script>
+  <script src="js/tabs.js" defer></script>
 <!--  Umami script-->
   <script defer src="https://cloud.umami.is/script.js" data-domains="oglindasalii.ro,editor.oglindasalii.ro" data-website-id="b02f2590-6648-4021-91e8-eb6b10dfd2ad"></script>
   <!-- Structured data -->
@@ -90,6 +90,8 @@
             "acceptedAnswer": { "@type": "Answer", "text": "Un PDF gata de printat, în format A4 sau A3, pe verticală sau pe orizontală." } },
           { "@type": "Question", "name": "Pot muta mesele după ce sunt așezate automat?",
             "acceptedAnswer": { "@type": "Answer", "text": "Da. Editorul propune o așezare, iar tu poți rearanja mesele și redenumi fiecare masă, de exemplu „Paris”." } },
+          { "@type": "Question", "name": "Puteți face un design doar pentru nunta noastră?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Da. Desenăm oglinda sălii de la zero, după tema nunții voastre, și putem realiza în același stil invitațiile, meniurile, numerele de masă și un logo personalizat." } },
           { "@type": "Question", "name": "Cât costă?",
             "acceptedAnswer": { "@type": "Answer", "text": "Este gratuit pe perioada beta." } }
         ]
@@ -110,6 +112,7 @@
       <nav class="nav" aria-label="Navigare principală">
         <a class="nav__link" href="#cum-functioneaza">Cum funcționează</a>
         <a class="nav__link" href="#sabloane">Șabloane</a>
+        <a class="nav__link" href="#design-personalizat">Design personalizat</a>
         <a class="nav__link" href="#intrebari">Întrebări</a>
         <a class="btn btn--sm" href="https://editor.oglindasalii.ro/" data-umami-event="cta-header">Începe acum</a>
       </nav>
@@ -123,14 +126,14 @@
         <div class="hero__copy">
           <p class="eyebrow">Plan de așezare la mese · A4 și A3</p>
           <h1 class="h1">Creează-ți oglinda sălii în câteva minute</h1>
-          <p class="lead">Alege un șablon, încarcă lista de invitați și descarcă un PDF gata de printat pentru intrarea în sală. Fără cont, fără programe complicate.</p>
+          <p class="lead">Alege unul dintre șabloanele desenate de noi, încarcă lista de invitați și descarcă un PDF gata de printat pentru intrarea în sală. Fără cont, fără programe complicate.</p>
           <div class="hero__actions">
             <a class="btn btn--lg" href="https://editor.oglindasalii.ro/" data-umami-event="cta-hero">Deschide editorul</a>
-            <a class="link-arrow" href="#tutorial" data-umami-event="cta-tutorial">Vezi tutorialul →</a>
-            <a class="link-arrow" href="#sabloane">Vezi șabloanele →</a>
+            <a class="link-arrow" href="#cum-functioneaza" data-umami-event="cta-tutorial">Vezi cum funcționează →</a>
           </div>
           <p class="hero__note hero__note--mobile"><b>Funcționează cel mai bine pe calculator.</b></p>
           <p class="hero__note">Fără cont și fără adresă de email.</p>
+          <p class="hero__custom">Vreți ceva unic? <a href="#contact" data-email-subject="Design personalizat pentru nuntă" data-umami-event="cta-hero-design">Scrieți-ne, vă desenăm oglinda sălii de la zero →</a></p>
         </div>
         <div class="hero__media">
           <img src="img/oglinda-salii-sevalet-lemn-1200.webp" srcset="img/oglinda-salii-sevalet-lemn-600.webp 600w, img/oglinda-salii-sevalet-lemn-900.webp 900w, img/oglinda-salii-sevalet-lemn-1200.webp 1200w" sizes="(min-width: 1200px) 548px, (min-width: 960px) calc(50vw - 52px), calc(100vw - 40px)" width="1200" height="900" fetchpriority="high"
@@ -139,36 +142,53 @@
       </div>
     </section>
 
-    <!-- Cum funcționează: js/video.js swaps the thumbnail for the YouTube player on click, so nothing from YouTube loads before that -->
+    <!-- Cum funcționează: silent clips from the editor (made in Remotion), one per tab. js/tabs.js loads a clip only
+         when the section is on screen, plays the tabs in order until the visitor picks one, then loops that one.
+         Clips: video/<name>.mp4 (H.264, 1280×720, no audio) + video/<name>.webp poster (first frame) -->
     <section class="section section--white" id="cum-functioneaza" aria-labelledby="titlu-pasi">
       <div class="wrap">
         <div class="section-head">
           <h2 class="h2" id="titlu-pasi">Cum funcționează</h2>
-          <p class="muted">Tot editorul în mai puțin de două minute: importul listei, decorul, antetul și descărcarea PDF.</p>
+          <p class="muted">Patru clipuri scurte, direct din editor.</p>
         </div>
-        <div class="video" id="tutorial" data-video-id="r75eQard6U8" data-video-title="Cum faci oglinda sălii pentru nuntă, tutorial complet">
-          <button class="video__play" type="button" aria-label="Pornește tutorialul video" data-umami-event="tutorial-play">
-            <img src="img/tutorial-960.webp" srcset="img/tutorial-480.webp 480w, img/tutorial-960.webp 960w, img/tutorial-1280.webp 1280w" sizes="(min-width: 1200px) 1152px, calc(100vw - 40px)" width="1280" height="720" loading="lazy" decoding="async" alt="">
-            <span class="video__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.5v13l10.5-6.5z"/></svg></span>
+        <div class="tabs" data-tabs>
+          <div class="tabs__list" role="tablist" aria-label="Pașii din editor">
+          <button class="tab" type="button" role="tab" id="tab-design" aria-controls="clip-design" aria-selected="true" data-umami-event="tutorial-tab" data-umami-event-tab="design">
+            <span class="tab__num" aria-hidden="true">1</span>
+            <span class="tab__text"><span class="tab__title">Design rapid în 3 pași</span><span class="tab__desc">Alegi hârtia, scrii numele mirilor, alegi culoarea temei și încarci lista. Gata în câteva minute.</span></span>
+            <span class="tab__progress" aria-hidden="true"></span>
           </button>
+          <button class="tab" type="button" role="tab" id="tab-mese" aria-controls="clip-mese" aria-selected="false" tabindex="-1" data-umami-event="tutorial-tab" data-umami-event-tab="mese">
+            <span class="tab__num" aria-hidden="true">2</span>
+            <span class="tab__text"><span class="tab__title">Aranjează mesele</span><span class="tab__desc">Mesele se așază singure. Le poți muta oricând, iar ghidajele le țin aliniate.</span></span>
+            <span class="tab__progress" aria-hidden="true"></span>
+          </button>
+          <button class="tab" type="button" role="tab" id="tab-font" aria-controls="clip-font" aria-selected="false" tabindex="-1" data-umami-event="tutorial-tab" data-umami-event-tab="font">
+            <span class="tab__num" aria-hidden="true">3</span>
+            <span class="tab__text"><span class="tab__title">Schimbă fontul și culorile</span><span class="tab__desc">Alegi fontul, mărimea textului și culorile, ca să se potrivească cu tema nunții.</span></span>
+            <span class="tab__progress" aria-hidden="true"></span>
+          </button>
+          <button class="tab" type="button" role="tab" id="tab-pdf" aria-controls="clip-pdf" aria-selected="false" tabindex="-1" data-umami-event="tutorial-tab" data-umami-event-tab="pdf">
+            <span class="tab__num" aria-hidden="true">4</span>
+            <span class="tab__text"><span class="tab__title">Descarcă PDF-ul</span><span class="tab__desc">Un clic și primești PDF-ul gata de printat, A4 sau A3.</span></span>
+            <span class="tab__progress" aria-hidden="true"></span>
+          </button>
+          </div>
+          <div class="tabs__panels">
+          <div class="tabs__panel" role="tabpanel" id="clip-design" aria-labelledby="tab-design">
+            <video muted playsinline preload="none" width="1280" height="720" poster="video/design.webp" data-src="video/design.mp4"></video>
+          </div>
+          <div class="tabs__panel" role="tabpanel" id="clip-mese" aria-labelledby="tab-mese" hidden>
+            <video muted playsinline preload="none" width="1280" height="720" poster="video/mese.webp" data-src="video/mese.mp4"></video>
+          </div>
+          <div class="tabs__panel" role="tabpanel" id="clip-font" aria-labelledby="tab-font" hidden>
+            <video muted playsinline preload="none" width="1280" height="720" poster="video/font.webp" data-src="video/font.mp4"></video>
+          </div>
+          <div class="tabs__panel" role="tabpanel" id="clip-pdf" aria-labelledby="tab-pdf" hidden>
+            <video muted playsinline preload="none" width="1280" height="720" poster="video/pdf.webp" data-src="video/pdf.mp4"></video>
+          </div>
+          </div>
         </div>
-        <ol class="steps">
-          <li class="step">
-            <span class="step__num" aria-hidden="true">1</span>
-            <h3>Alege un șablon</h3>
-            <p class="muted">Pornești de la un design gata făcut, completat cu nume de exemplu. Schimbi fontul, culorile și decorațiunile.</p>
-          </li>
-          <li class="step">
-            <span class="step__num" aria-hidden="true">2</span>
-            <h3>Adaugă invitații</h3>
-            <p class="muted">Încarci lista din Excel sau CSV, cu numărul mesei pentru fiecare invitat. Mesele se așază singure în pagină.</p>
-          </li>
-          <li class="step">
-            <span class="step__num" aria-hidden="true">3</span>
-            <h3>Descarcă gata de printat</h3>
-            <p class="muted">Alegi A4 sau A3, pe verticală sau orizontală, și descarci PDF-ul. Îl duci la orice centru de print.</p>
-          </li>
-        </ol>
       </div>
     </section>
 
@@ -177,8 +197,9 @@
       <div class="wrap">
         <div class="gallery-head">
           <div class="section-head">
-            <h2 class="h2" id="titlu-sabloane">Șabloane pentru oglinda sălii</h2>
-            <p class="muted">Câteva modele, ca inspirație. Dacă vă place un stil, îl adaptăm după tema nunții voastre, prin design personalizat.</p>
+            <p class="eyebrow">Design original</p>
+            <h2 class="h2" id="titlu-sabloane">Șabloane desenate de noi, de la zero</h2>
+            <p class="muted">Nu sunt modele luate de pe internet: fiecare șablon e creat de noi, cu ornamentele și fonturile lui. Îl personalizați gratuit în editor sau îl adaptăm noi după tema nunții voastre.</p>
           </div>
         </div>
 
@@ -235,23 +256,48 @@
       </div>
     </section>
 
-    <!-- La nuntă -->
-    <section class="section section--tight-top" aria-labelledby="titlu-poze">
+    <!-- Design personalizat -->
+    <section class="section section--white" id="design-personalizat" aria-labelledby="titlu-design">
       <div class="wrap">
-        <div class="section-head">
-          <h2 class="h2 h2--small" id="titlu-poze">Așa arată la intrarea în sală</h2>
-        </div>
-        <div class="photos">
-          <img src="img/oglinda-salii-suport-alb-1000.webp" srcset="img/oglinda-salii-suport-alb-600.webp 600w, img/oglinda-salii-suport-alb-800.webp 800w, img/oglinda-salii-suport-alb-1000.webp 1000w" sizes="(min-width: 1200px) 564px, (min-width: 700px) calc(50vw - 36px), calc(100vw - 40px)" width="1000" height="750" loading="lazy" decoding="async"
-               alt="Plan de așezare alfabetic cu miri ilustrați, printat și așezat pe un suport alb în sala de nuntă">
-          <img src="img/oglinda-salii-rama-aurie-1200.webp" srcset="img/oglinda-salii-rama-aurie-600.webp 600w, img/oglinda-salii-rama-aurie-900.webp 900w, img/oglinda-salii-rama-aurie-1200.webp 1200w" sizes="(min-width: 1200px) 564px, (min-width: 700px) calc(50vw - 36px), calc(100vw - 40px)" width="1400" height="1050" loading="lazy" decoding="async"
-               alt="Oglinda sălii printată, cu frunze în acuarelă, într-o ramă aurie pe șevalet la intrarea în sala de nuntă">
+        <div class="offer">
+          <div class="offer__copy">
+            <p class="eyebrow">Design personalizat</p>
+            <h2 class="h2 h2--small" id="titlu-design">Vreți un design doar al vostru?</h2>
+            <p>Desenăm oglinda sălii de la zero, după tema nunții voastre. Realizăm și invitațiile, meniurile și numerele de masă în același stil, plus un logo personalizat, inspirat din povestea, pasiunile sau hobby-urile voastre, ca totul să arate unitar.</p>
+            <a class="btn btn--lg" href="#contact" data-email-subject="Design personalizat pentru nuntă" data-umami-event="design-personalizat">Cere un design personalizat</a>
+          </div>
+          <!-- Carousel: add a slide by copying a <figure> (js/carousel.js builds the dots and arrows) -->
+          <div class="offer__example carousel" role="region" aria-roledescription="carousel" aria-label="Exemple de design personalizat">
+            <div class="carousel__track">
+              <figure class="carousel__slide">
+                <img src="img/oglinda-salii-rama-aurie-1200.webp" srcset="img/oglinda-salii-rama-aurie-600.webp 600w, img/oglinda-salii-rama-aurie-900.webp 900w, img/oglinda-salii-rama-aurie-1200.webp 1200w" sizes="(min-width: 1200px) 484px, (min-width: 900px) calc(50vw - 120px), calc(100vw - 100px)" width="1400" height="1050" loading="lazy" decoding="async"
+                     alt="Oglinda sălii printată, cu frunze în acuarelă, într-o ramă aurie pe șevalet la intrarea în sala de nuntă">
+                <figcaption>La intrarea în sală, într-o ramă aurie</figcaption>
+              </figure>
+              <figure class="carousel__slide">
+                <img src="img/invitatie-personalizata-900.webp" srcset="img/invitatie-personalizata-500.webp 500w, img/invitatie-personalizata-700.webp 700w, img/invitatie-personalizata-900.webp 900w" sizes="(min-width: 1200px) 484px, (min-width: 900px) calc(50vw - 120px), calc(100vw - 100px)" width="900" height="1530" loading="lazy" decoding="async"
+                     style="object-position: 50% 28%"
+                     alt="Mirele ține în mâini invitația de nuntă personalizată, cu numele mirilor într-un hexagon auriu cu frunze">
+                <figcaption>Exemplu: invitație de nuntă personalizată</figcaption>
+              </figure>
+              <figure class="carousel__slide">
+                <img src="img/nunta-masa-meniu-900.webp" srcset="img/nunta-masa-meniu-500.webp 500w, img/nunta-masa-meniu-700.webp 700w, img/nunta-masa-meniu-900.webp 900w" sizes="(min-width: 1200px) 484px, (min-width: 900px) calc(50vw - 120px), calc(100vw - 100px)" width="900" height="637" loading="lazy" decoding="async"
+                     alt="Meniu de nuntă personalizat, cu chenar auriu și frunze, pe masa festivă lângă un platou cu covrigei">
+                <figcaption>Exemplu: meniu de nuntă personalizat</figcaption>
+              </figure>
+              <figure class="carousel__slide">
+                <img src="img/numar-masa-nunta-900.webp" srcset="img/numar-masa-nunta-500.webp 500w, img/numar-masa-nunta-700.webp 700w, img/numar-masa-nunta-900.webp 900w" sizes="(min-width: 1200px) 484px, (min-width: 900px) calc(50vw - 120px), calc(100vw - 100px)" width="900" height="637" loading="lazy" decoding="async"
+                     alt="Masă rotundă de nuntă aranjată, cu numărul mesei pe un suport de lemn lângă aranjamentul floral">
+                <figcaption>Exemplu: număr de masă personalizat</figcaption>
+              </figure>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Funcții -->
-    <section class="section section--white" aria-labelledby="titlu-functii">
+    <section class="section" aria-labelledby="titlu-functii">
       <div class="wrap">
         <div class="section-head">
           <h2 class="h2" id="titlu-functii">Tot ce îți trebuie pentru planul de la intrare</h2>
@@ -276,46 +322,6 @@
       </div>
     </section>
 
-    <!-- Design personalizat (Rock is shown here as a past custom design, not as an editor template) -->
-    <section class="section" aria-labelledby="titlu-design">
-      <div class="wrap">
-        <div class="offer">
-          <div class="offer__copy">
-            <p class="eyebrow">Design personalizat</p>
-            <h2 class="h2 h2--small" id="titlu-design">Vreți un design doar al vostru?</h2>
-            <p>Desenăm oglinda sălii de la zero, după tema nunții voastre. Realizăm și invitațiile, meniurile și numerele de masă în același stil, plus un logo personalizat, inspirat din povestea, pasiunile sau hobby-urile voastre, ca totul să arate unitar.</p>
-            <a class="btn btn--lg" href="#contact" data-email-subject="Design personalizat pentru nuntă" data-umami-event="design-personalizat">Cere un design personalizat</a>
-          </div>
-          <!-- Carousel: add a slide by copying a <figure> (js/carousel.js builds the dots and arrows) -->
-          <div class="offer__example carousel" role="region" aria-roledescription="carousel" aria-label="Exemple de design personalizat">
-            <div class="carousel__track">
-              <figure class="carousel__slide">
-                <img src="img/invitatie-personalizata-900.webp" srcset="img/invitatie-personalizata-500.webp 500w, img/invitatie-personalizata-700.webp 700w, img/invitatie-personalizata-900.webp 900w" sizes="(min-width: 1200px) 484px, (min-width: 900px) calc(50vw - 120px), calc(100vw - 100px)" width="900" height="1530" loading="lazy" decoding="async"
-                     style="object-position: 50% 28%"
-                     alt="Mirele ține în mâini invitația de nuntă personalizată, cu numele mirilor într-un hexagon auriu cu frunze">
-                <figcaption>Exemplu: invitație de nuntă personalizată</figcaption>
-              </figure>
-              <figure class="carousel__slide">
-                <img src="img/nunta-masa-meniu-900.webp" srcset="img/nunta-masa-meniu-500.webp 500w, img/nunta-masa-meniu-700.webp 700w, img/nunta-masa-meniu-900.webp 900w" sizes="(min-width: 1200px) 484px, (min-width: 900px) calc(50vw - 120px), calc(100vw - 100px)" width="900" height="637" loading="lazy" decoding="async"
-                     alt="Meniu de nuntă personalizat, cu chenar auriu și frunze, pe masa festivă lângă un platou cu covrigei">
-                <figcaption>Exemplu: meniu de nuntă personalizat</figcaption>
-              </figure>
-              <figure class="carousel__slide">
-                <img src="img/numar-masa-nunta-900.webp" srcset="img/numar-masa-nunta-500.webp 500w, img/numar-masa-nunta-700.webp 700w, img/numar-masa-nunta-900.webp 900w" sizes="(min-width: 1200px) 484px, (min-width: 900px) calc(50vw - 120px), calc(100vw - 100px)" width="900" height="637" loading="lazy" decoding="async"
-                     alt="Masă rotundă de nuntă aranjată, cu numărul mesei pe un suport de lemn lângă aranjamentul floral">
-                <figcaption>Exemplu: număr de masă personalizat</figcaption>
-              </figure>
-              <figure class="carousel__slide">
-                <img src="img/sablon-rock-900.webp" srcset="img/sablon-rock-500.webp 500w, img/sablon-rock-700.webp 700w, img/sablon-rock-900.webp 900w" sizes="(min-width: 1200px) 484px, (min-width: 900px) calc(50vw - 120px), calc(100vw - 100px)" width="900" height="637" loading="lazy" decoding="async"
-                     alt="Oglinda sălii cu temă rock, desenată la comandă: mesele sunt viniluri numerotate, fiecare cu numele unei trupe">
-                <figcaption>Exemplu: oglinda sălii desenată pentru o nuntă cu temă rock</figcaption>
-              </figure>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Întrebări -->
     <section class="section section--white" id="intrebari" aria-labelledby="titlu-faq">
       <div class="wrap faq">
@@ -336,6 +342,10 @@
           <details>
             <summary>Pot muta mesele după ce sunt așezate automat?</summary>
             <p>Da. Editorul propune o așezare, iar tu poți rearanja mesele și redenumi fiecare masă, de exemplu „Paris”.</p>
+          </details>
+          <details>
+            <summary>Puteți face un design doar pentru nunta noastră?</summary>
+            <p>Da. Desenăm oglinda sălii de la zero, după tema nunții voastre, și putem realiza în același stil invitațiile, meniurile, numerele de masă și un logo personalizat. <a href="#design-personalizat">Cereți un design personalizat</a>.</p>
           </details>
           <details>
             <summary>Cât costă?</summary>
