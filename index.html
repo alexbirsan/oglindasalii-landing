@@ -91,7 +91,7 @@
           { "@type": "Question", "name": "Pot muta mesele după ce sunt așezate automat?",
             "acceptedAnswer": { "@type": "Answer", "text": "Da. Editorul propune o așezare, iar tu poți rearanja mesele și redenumi fiecare masă, de exemplu „Paris”." } },
           { "@type": "Question", "name": "Puteți face un design doar pentru nunta noastră?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Da. Desenăm oglinda sălii de la zero, după tema nunții voastre, și putem realiza în același stil invitațiile, meniurile, numerele de masă și un logo personalizat." } },
+            "acceptedAnswer": { "@type": "Answer", "text": "Da. Desenăm oglinda sălii de la zero, după tema nunții voastre, și putem realiza în același stil invitațiile, meniurile, numerele de masă și un logo personalizat. Oglinda sălii personalizată pornește de la 50 lei, iar prima schiță o primiți în 2–3 zile." } },
           { "@type": "Question", "name": "Cât costă?",
             "acceptedAnswer": { "@type": "Answer", "text": "Este gratuit pe perioada beta." } }
         ]
@@ -263,12 +263,24 @@
             <p class="eyebrow">Design personalizat</p>
             <h2 class="h2 h2--small" id="titlu-design">Vreți un design doar al vostru?</h2>
             <p>Desenăm oglinda sălii de la zero, după tema nunții voastre. Realizăm și invitațiile, meniurile și numerele de masă în același stil, plus un logo personalizat, inspirat din povestea, pasiunile sau hobby-urile voastre, ca totul să arate unitar.</p>
+            <!-- Keep price and turnaround in sync with the FAQ answer "Puteți face un design doar pentru nunta noastră?" (HTML + JSON-LD) -->
+            <dl class="offer__facts">
+              <div><dt>Oglinda sălii</dt><dd>de la 50 lei</dd></div>
+              <div><dt>Prima schiță</dt><dd>în 2–3 zile</dd></div>
+            </dl>
+            <ol class="offer__steps">
+              <li><b>Ne spuneți tema</b> nunții: culorile, stilul și data.</li>
+              <li><b>Primiți prima schiță</b> în 2–3 zile.</li>
+              <li><b>Facem modificările</b> împreună, până vă place.</li>
+              <li><b>Primiți fișierele</b>, gata de printat sau pentru ecranul TV.</li>
+            </ol>
             <!-- WhatsApp first: couples talk to wedding suppliers there; email stays as the second option. Links are built in js/contact.js -->
             <a class="btn btn--lg btn--whatsapp" href="#contact" data-whatsapp="Bună! Aș vrea un design personalizat pentru oglinda sălii. Data nunții: " data-umami-event="design-personalizat" data-umami-event-canal="whatsapp">
               <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
               Scrieți-ne pe WhatsApp
             </a>
             <p class="offer__alt">sau <a href="#contact" data-email-subject="Design personalizat pentru nuntă" data-umami-event="design-personalizat" data-umami-event-canal="email">pe email</a></p>
+            <p class="offer__urgent"><b>E urgent?</b> Scrieți-ne pe WhatsApp, acolo răspundem cel mai repede.</p>
           </div>
           <!-- Carousel: add a slide by copying a <figure> (js/carousel.js builds the dots and arrows) -->
           <div class="offer__example carousel" role="region" aria-roledescription="carousel" aria-label="Exemple de design personalizat">
@@ -349,7 +361,7 @@
           </details>
           <details>
             <summary>Puteți face un design doar pentru nunta noastră?</summary>
-            <p>Da. Desenăm oglinda sălii de la zero, după tema nunții voastre, și putem realiza în același stil invitațiile, meniurile, numerele de masă și un logo personalizat. <a href="#design-personalizat">Cereți un design personalizat</a>.</p>
+            <p>Da. Desenăm oglinda sălii de la zero, după tema nunții voastre, și putem realiza în același stil invitațiile, meniurile, numerele de masă și un logo personalizat. Oglinda sălii personalizată pornește de la 50 lei, iar prima schiță o primiți în 2–3 zile. <a href="#design-personalizat">Cereți un design personalizat</a>.</p>
           </details>
           <details>
             <summary>Cât costă?</summary>
