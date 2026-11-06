@@ -18,6 +18,7 @@
   <link rel="preload" as="font" type="font/woff2" href="fonts/inter-latin-400-normal.woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
   <script src="js/contact.js" defer></script>
+  <script src="js/nav.js" defer></script>
   <script defer src="https://cloud.umami.is/script.js" data-exclude-hash="true" data-domains="oglindasalii.ro,editor.oglindasalii.ro" data-website-id="b02f2590-6648-4021-91e8-eb6b10dfd2ad"></script>
 </head>
 <body>
@@ -30,11 +31,17 @@
         <span class="brand__name">Oglinda <em>sălii</em></span>
       </a>
       <nav class="nav" aria-label="Navigare principală">
-        <a class="nav__link" href="./#cum-functioneaza">Cum funcționează</a>
-        <a class="nav__link" href="./#sabloane">Șabloane</a>
-        <a class="nav__link" href="./#design-personalizat">Design personalizat</a>
-        <a class="nav__link" href="./#intrebari">Întrebări</a>
-        <a class="btn btn--sm" href="https://editor.oglindasalii.ro/" data-umami-event="cta-header" data-umami-event-pagina="confidentialitate">Începeți acum</a>
+        <!-- Below 1000px the links fold into a menu opened by the ☰ button (js/nav.js) -->
+        <div class="nav__menu" id="meniu">
+          <a class="nav__link" href="./#cum-functioneaza">Cum funcționează</a>
+          <a class="nav__link" href="./#sabloane">Șabloane</a>
+          <a class="nav__link" href="./#design-personalizat">Design personalizat</a>
+          <a class="nav__link" href="./#intrebari">Întrebări</a>
+        </div>
+        <a class="btn btn--sm nav__cta" href="https://editor.oglindasalii.ro/" data-umami-event="cta-header" data-umami-event-pagina="confidentialitate">Începeți acum</a>
+        <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="meniu" aria-label="Meniu" hidden>
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path class="nav__icon-open" d="M4 7h16M4 12h16M4 17h16"/><path class="nav__icon-close" d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
       </nav>
     </div>
   </header>

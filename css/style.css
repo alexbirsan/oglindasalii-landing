@@ -130,6 +130,8 @@ p { margin: 0; }
 .btn--lg { min-height: 56px; padding: 16px 32px; font-size: 17px; }
 .btn--sm { min-height: 44px; padding: 10px 20px; font-size: 15px; }
 .btn--whatsapp { gap: 10px; }
+.btn--outline { background: transparent; color: var(--plum); box-shadow: inset 0 0 0 1.5px var(--plum); }
+.btn--outline:hover { background: var(--plum); color: #fff; }
 .link-arrow { color: var(--ink); font-weight: 500; padding: 12px 0; text-decoration: none; }
 .link-arrow:hover { text-decoration: underline; }
 
@@ -154,6 +156,43 @@ p { margin: 0; }
 /* The section on screen (js/nav.js) */
 .nav__link[aria-current="location"] { color: var(--plum); text-decoration: underline; text-decoration-color: var(--gold); text-decoration-thickness: 2px; text-underline-offset: 8px; }
 @media (min-width: 1000px) { .nav__link { display: inline; } }
+.nav__menu { display: flex; align-items: center; gap: 24px; }
+.nav__toggle {
+  display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; margin-right: -10px;
+  padding: 0; border: 0; border-radius: 999px; background: none; color: var(--plum); cursor: pointer;
+}
+.nav__toggle[hidden] { display: none; }
+.nav__toggle .nav__icon-close, .nav__toggle[aria-expanded="true"] .nav__icon-open { display: none; }
+.nav__toggle[aria-expanded="true"] .nav__icon-close { display: inline; }
+/* Below 1000px: the links fold into a panel under the header, opened by the ☰ button (js/nav.js) */
+@media (max-width: 999px) {
+  .nav { gap: 12px; }
+  .nav__menu {
+    display: none; position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; align-items: stretch; gap: 0;
+    padding: 4px var(--gutter) 16px; background: var(--bg);
+    border-bottom: 1px solid var(--line); box-shadow: 0 12px 24px rgba(59, 52, 68, 0.08);
+  }
+  .nav__menu.is-open { display: flex; }
+  .nav__menu .nav__link { display: block; padding: 14px 0; font-size: 17px; border-bottom: 1px solid var(--line); }
+  .nav__menu .nav__link:last-child { border-bottom: 0; }
+  .nav__menu .nav__link[aria-current="location"] { text-underline-offset: 6px; }
+}
+@media (min-width: 1000px) { .nav__toggle { display: none !important; } }
+/* Small phones: a smaller logo so the logo, the button and ☰ fit on one line */
+.brand__name, .nav__cta { white-space: nowrap; }
+@media (max-width: 439px) {
+  .site-header .wrap, .nav { gap: 8px; }
+  .brand { gap: 8px; }
+  .brand img { width: 26px; height: 35px; }
+  .brand__name { font-size: 22px; }
+  .nav__cta { padding: 8px 14px; font-size: 14px; }
+}
+@media (max-width: 359px) {
+  .site-header .wrap { padding: 0 14px; }
+  .brand__name { font-size: 19px; }
+  .nav__cta { padding: 8px 12px; font-size: 13px; }
+}
 
 /* Hero */
 .hero { padding: 32px 0 var(--section); }
@@ -166,8 +205,11 @@ p { margin: 0; }
 @media (min-width: 768px) { .hero__copy { gap: 24px; } }
 .hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; }
 .hero__note { font-size: 14px; color: var(--ink-muted); }
-.hero__custom { font-size: 15px; color: var(--ink-soft); padding-top: 16px; border-top: 1px solid var(--line); }
-.hero__custom a { color: var(--plum); font-weight: 500; }
+.hero__quote { margin: 0; padding-left: 16px; border-left: 2px solid var(--gold); }
+.hero__quote blockquote { margin: 0; font-family: var(--serif); font-size: 19px; font-style: italic; line-height: 1.4; color: var(--ink); }
+.hero__quote blockquote p::before { content: '„'; }
+.hero__quote blockquote p::after { content: '”'; }
+.hero__quote figcaption { margin-top: 6px; font-size: 13px; color: var(--ink-muted); }
 .hero__media img {
   width: 100%; aspect-ratio: 4 / 3; object-fit: cover;
   border-radius: 16px; box-shadow: 0 24px 60px rgba(60, 50, 40, .18);
@@ -335,6 +377,15 @@ p { margin: 0; }
 }
 .faq details[open] summary::after { transform: rotate(45deg); }
 .faq details p { padding: 0 0 22px; color: var(--ink-soft); }
+
+/* Closing call to action */
+.final {
+  background: var(--plum-tint); border-radius: 20px; padding: clamp(32px, 6vw, 64px);
+  display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center;
+}
+.final p { color: #444; max-width: 560px; }
+.final__actions { display: flex; flex-direction: column; gap: 12px; width: 100%; margin-top: 12px; }
+@media (min-width: 640px) { .final__actions { flex-direction: row; justify-content: center; width: auto; } }
 
 /* Footer */
 .site-footer { padding: 64px 0 32px; background: var(--plum); color: #fff; }

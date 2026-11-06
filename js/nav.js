@@ -3,6 +3,27 @@
 // adding history entries. Outside those sections (the hero, Funcții) no link is marked and the address has no #.
 // The Umami tag has data-exclude-hash, so these address changes are not counted as page views.
 (function () {
+	// Below 1000px the header links sit in a panel (#meniu) that the ☰ button opens. The button is hidden in the HTML
+	// and shown here, so without JavaScript nothing points to a menu that can't open.
+	var toggle = document.querySelector('.nav__toggle')
+	var menu = document.getElementById('meniu')
+	if (toggle && menu) {
+		var setOpen = function (open) {
+			toggle.setAttribute('aria-expanded', open ? 'true' : 'false')
+			toggle.setAttribute('aria-label', open ? 'Închide meniul' : 'Meniu')
+			menu.classList.toggle('is-open', open)
+		}
+		toggle.hidden = false
+		toggle.addEventListener('click', function () { setOpen(!menu.classList.contains('is-open')) })
+		// Close after picking a section, on Escape, on a tap outside the header, or when the screen gets wide
+		menu.addEventListener('click', function (e) { if (e.target.closest('a')) setOpen(false) })
+		document.addEventListener('keydown', function (e) {
+			if (e.key === 'Escape' && menu.classList.contains('is-open')) { setOpen(false); toggle.focus() }
+		})
+		document.addEventListener('click', function (e) { if (!e.target.closest('.site-header')) setOpen(false) })
+		window.matchMedia('(min-width: 1000px)').addEventListener('change', function () { setOpen(false) })
+	}
+
 	var links = [].slice.call(document.querySelectorAll('.nav__link[href^="#"]'))
 	var items = links.map(function (a) {
 		return { link: a, section: document.getElementById(a.getAttribute('href').slice(1)) }

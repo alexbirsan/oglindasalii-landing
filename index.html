@@ -111,11 +111,17 @@
         <span class="brand__name">Oglinda <em>sălii</em></span>
       </a>
       <nav class="nav" aria-label="Navigare principală">
-        <a class="nav__link" href="#cum-functioneaza">Cum funcționează</a>
-        <a class="nav__link" href="#sabloane">Șabloane</a>
-        <a class="nav__link" href="#design-personalizat">Design personalizat</a>
-        <a class="nav__link" href="#intrebari">Întrebări</a>
-        <a class="btn btn--sm" href="https://editor.oglindasalii.ro/" data-umami-event="cta-header">Începeți acum</a>
+        <!-- Below 1000px the links fold into a menu opened by the ☰ button (js/nav.js) -->
+        <div class="nav__menu" id="meniu">
+          <a class="nav__link" href="#cum-functioneaza">Cum funcționează</a>
+          <a class="nav__link" href="#sabloane">Șabloane</a>
+          <a class="nav__link" href="#design-personalizat">Design personalizat</a>
+          <a class="nav__link" href="#intrebari">Întrebări</a>
+        </div>
+        <a class="btn btn--sm nav__cta" href="https://editor.oglindasalii.ro/" data-umami-event="cta-header">Începeți acum</a>
+        <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="meniu" aria-label="Meniu" hidden>
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path class="nav__icon-open" d="M4 7h16M4 12h16M4 17h16"/><path class="nav__icon-close" d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
       </nav>
     </div>
   </header>
@@ -127,13 +133,17 @@
         <div class="hero__copy">
           <p class="eyebrow"><span>Gratuit în beta</span> · <span>Print A1–A4</span> · <span>Ecran TV Full HD și 4K</span></p>
           <h1 class="h1">Creați oglinda sălii în câteva minute</h1>
-          <p class="lead">Alegeți unul dintre șabloanele desenate de noi, încărcați lista de invitați și descărcați planul gata de printat sau de pus pe ecranul TV de la intrarea în sală. Fără cont, fără programe complicate.</p>
+          <p class="lead">Alegeți unul dintre șabloanele desenate de noi, încărcați lista de invitați și descărcați planul gata de printat sau de pus pe ecranul TV de la intrarea în sală. Fără programe complicate.</p>
           <div class="hero__actions">
             <a class="btn btn--lg" href="https://editor.oglindasalii.ro/" data-umami-event="cta-hero">Deschideți editorul</a>
             <a class="link-arrow" href="#cum-functioneaza" data-umami-event="cta-tutorial">Vedeți cum funcționează →</a>
           </div>
-          <p class="hero__note">Fără cont și fără adresă de email. Fișierele descărcate în PDF, PNG sau JPG rămân ale voastre.</p>
-          <p class="hero__custom">Vreți ceva unic? <a href="#design-personalizat" data-whatsapp="Bună! Aș vrea un design personalizat pentru oglinda sălii. Data nunții: " data-umami-event="cta-hero-design" data-umami-event-canal="whatsapp">Scrieți-ne pe WhatsApp, vă desenăm oglinda sălii de la zero →</a></p>
+          <p class="hero__note">Fișierele descărcate în PDF, PNG sau JPG rămân ale voastre.</p>
+          <!-- One of the quotes from Design personalizat ("Ce spun mirii"); keep the two in sync -->
+          <figure class="hero__quote">
+            <blockquote><p>Cu o zi înainte de nuntă ne-am dat seama că nu avem oglinda sălii. Mersi mult pentru ajutor!</p></blockquote>
+            <figcaption>Miri, octombrie 2022</figcaption>
+          </figure>
         </div>
         <div class="hero__media">
           <img src="img/oglinda-salii-sevalet-lemn-1200.webp" srcset="img/oglinda-salii-sevalet-lemn-600.webp 600w, img/oglinda-salii-sevalet-lemn-900.webp 900w, img/oglinda-salii-sevalet-lemn-1200.webp 1200w" sizes="(min-width: 1200px) 548px, (min-width: 960px) calc(50vw - 52px), calc(100vw - 40px)" width="1200" height="900" fetchpriority="high"
@@ -327,15 +337,15 @@
           <div class="quotes__list">
             <figure class="quote">
               <blockquote><p>Am venit la Alex cu o idee și a făcut-o și mai faină&nbsp;\m/</p></blockquote>
-              <figcaption>Nuntă cu temă rock</figcaption>
+              <figcaption>Nuntă cu temă rock · septembrie 2019</figcaption>
             </figure>
             <figure class="quote">
               <blockquote><p>Amândoi suntem pasionați de ATV și Alex ne-a ajutat rapid cu un design potrivit pentru noi.</p></blockquote>
-              <figcaption>Chenar floral auriu, cu silueta mirilor</figcaption>
+              <figcaption>Chenar floral auriu, cu silueta mirilor · mai 2021</figcaption>
             </figure>
             <figure class="quote">
               <blockquote><p>Cu o zi înainte de nuntă ne-am dat seama că nu avem oglinda sălii. Mersi mult pentru ajutor!</p></blockquote>
-              <figcaption>Oglinda sălii pe suport alb</figcaption>
+              <figcaption>Oglinda sălii pe suport alb · octombrie 2022</figcaption>
             </figure>
           </div>
         </div>
@@ -398,6 +408,23 @@
             <!-- Keep in sync with the FAQPage JSON-LD in <head> -->
             <p>Este gratuit pe perioada beta. Fișierele descărcate în PDF, PNG sau JPG rămân ale voastre și le puteți folosi și după beta.</p>
           </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing call to action: both paths side by side. Keep the price in sync with Design personalizat -->
+    <section class="section" aria-labelledby="titlu-final">
+      <div class="wrap">
+        <div class="final">
+          <h2 class="h2 h2--small" id="titlu-final">Gata pentru oglinda sălii voastre?</h2>
+          <p>Faceți-o singuri în editor, gratuit, sau o desenăm noi pentru voi, de&nbsp;la&nbsp;50&nbsp;lei.</p>
+          <div class="final__actions">
+            <a class="btn btn--lg" href="https://editor.oglindasalii.ro/" data-umami-event="cta-final">Deschideți editorul</a>
+            <a class="btn btn--lg btn--outline btn--whatsapp" href="#design-personalizat" data-whatsapp="Bună! Aș vrea un design personalizat pentru oglinda sălii. Data nunții: " data-umami-event="cta-final-design" data-umami-event-canal="whatsapp">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+              Cereți un design personalizat
+            </a>
+          </div>
         </div>
       </div>
     </section>
