@@ -5,7 +5,7 @@
 //   data-phone          link text and href become the phone number
 //   data-whatsapp       href opens a WhatsApp chat with us, with this message already typed (the link keeps its text)
 (function () {
-	var email = ['masanuntii', 'gmail.com'].join('@')
+	var email = ['contact', 'oglindasalii.ro'].join('@')
 	var phone = ['+40', '758', '30', '55', '49']
 	var mailto = 'mai' + 'lto:'
 
