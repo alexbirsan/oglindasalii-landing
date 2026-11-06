@@ -24,11 +24,12 @@ make() {
 	crop=
 }
 
-# Photos (quality 80): hero, and the two "Așa arată la intrarea în sală" photos
+# Photos (quality 80): hero, and the "La nunți reale" photos in the Șabloane section (4:3)
 # Hero: portrait photo cropped to the 4:3 frame around the plan on the easel
 crop="0 1450 3078 2308"
 make oglinda-salii-sevalet-lemn.jpg     80 600 900 1200
 make oglinda-salii-rama-aurie.webp      80 600 900 1200
+make oglinda-salii-suport-alb.webp      80 600 900
 
 # Templates (quality 85: thin lines and small text)
 make sablon-hexagon-auriu.webp  85 450 650 900
@@ -37,7 +38,9 @@ make sablon-miri-ilustrati.webp 85 450 650 900
 make sablon-roz-clasic.webp     85 300 495
 make sablon-floral-auriu.webp   85 300 495
 
-# Custom-design carousel photos (landscape frame, 500/700/900 widths; crops match that frame)
+# Custom-design carousel: one wedding's set, in the same style (landscape frame, 500/700/900 widths; crops match that frame)
+# The plan detail is the design file itself (wider than the frame), shown whole on white
+make oglinda-salii-hexagon-detaliu.jpg 85 500 700 900
 make invitatie-personalizata.webp 80 500 700 900
 crop="0 1745 3648 2580"
 make nunta-masa-meniu.jpg         80 500 700 900

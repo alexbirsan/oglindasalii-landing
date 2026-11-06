@@ -83,7 +83,7 @@ a { color: var(--plum); }
 a:hover { color: var(--ink); }
 :focus-visible { outline: 2px solid var(--plum); outline-offset: 3px; border-radius: 4px; }
 
-h1, h2, h3 { margin: 0; }
+h1, h2, h3, h4 { margin: 0; }
 p { margin: 0; }
 
 .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
@@ -225,6 +225,17 @@ p { margin: 0; }
   .gallery--portrait .card__meta { flex-direction: column; gap: 0; }
 }
 
+/* Șabloane, in two parts: "Gata de folosit în editor", then "La nunți reale" (photos from the venue) */
+.subhead { font-family: var(--serif); font-size: 26px; font-weight: 600; line-height: 1.2; margin-bottom: 20px; }
+.real { margin-top: 64px; padding-top: 48px; border-top: 1px solid rgba(60, 50, 40, .12); }
+.real .subhead { margin-bottom: 8px; }
+.real > .muted { max-width: 600px; margin: 0 0 24px; }
+.real .link-arrow { display: inline-block; margin-top: 20px; }
+.photo { margin: 0; display: flex; flex-direction: column; gap: 12px; }
+.photo img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; }
+.photo figcaption { font-size: 13px; color: var(--ink-muted); }
+.photo b { display: block; font-family: var(--serif); font-size: 22px; font-weight: 600; line-height: 1.2; color: var(--ink); }
+
 /* Section links land clear of the sticky header */
 #cum-functioneaza, #sabloane, #design-personalizat { scroll-margin-top: 68px; }
 
@@ -270,6 +281,7 @@ p { margin: 0; }
   background: #fff; border-radius: 6px; box-shadow: 0 12px 32px rgba(60, 50, 40, .16);
 }
 .offer__example figcaption { font-size: 14px; color: var(--ink-muted); }
+.offer__example .carousel__img--whole { object-fit: contain; padding: 0 6%; }
 
 /* Carousel: a swipeable scroll-snap strip; js/carousel.js adds the arrows and dots.
    The track's padding (cancelled by negative margins) leaves room for the image shadow inside the scroll area. */
