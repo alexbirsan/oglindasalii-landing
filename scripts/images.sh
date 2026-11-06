@@ -37,6 +37,7 @@ make sablon-botanic.webp        85 450 650 900
 make sablon-miri-ilustrati.webp 85 450 650 900
 make sablon-roz-clasic.webp     85 300 495
 make sablon-floral-auriu.webp   85 300 495
+make sablon-rock.webp           85 500 700 900
 
 # Custom-design carousel: one wedding's set, in the same style (landscape frame, 500/700/900 widths; crops match that frame)
 # The plan detail is the design file itself (wider than the frame), shown whole on white

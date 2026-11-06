@@ -102,6 +102,8 @@ p { margin: 0; }
   font-size: 12px; letter-spacing: 3px; text-transform: uppercase;
   font-weight: 500; color: var(--plum-soft);
 }
+/* Eyebrow items split into <span>s wrap between the items, never inside one */
+.eyebrow span { white-space: nowrap; }
 .h1 {
   font-family: var(--serif); font-weight: 500;
   font-size: clamp(40px, 9vw, 72px); line-height: 1.04; letter-spacing: -0.5px; color: #222;
@@ -271,6 +273,20 @@ p { margin: 0; }
 .offer__urgent { font-size: 14px; }
 .offer__urgent b { color: var(--plum); font-weight: 600; }
 .offer__example { margin: 0; display: flex; flex-direction: column; gap: 10px; }
+
+/* Quotes from couples, under the custom design offer */
+.quotes { margin-top: 48px; }
+.quotes__title { font-family: var(--serif); font-size: clamp(26px, 4vw, 32px); font-weight: 500; color: var(--plum); margin-bottom: 20px; }
+.quotes__list { display: grid; gap: 20px; }
+@media (min-width: 768px) { .quotes__list { grid-template-columns: repeat(3, 1fr); gap: 24px; } }
+.quote {
+  margin: 0; border: 1px solid var(--line); border-radius: 12px; padding: 28px;
+  display: flex; flex-direction: column; justify-content: space-between; gap: 16px;
+}
+.quote blockquote { margin: 0; font-family: var(--serif); font-size: 21px; font-style: italic; line-height: 1.4; color: var(--ink); }
+.quote blockquote p::before { content: '„'; }
+.quote blockquote p::after { content: '”'; }
+.quote figcaption { font-size: 14px; color: var(--ink-muted); padding-top: 12px; border-top: 1px solid var(--line); }
 .offer__example img {
   width: 100%; aspect-ratio: 1.414 / 1; object-fit: cover;
   background: #fff; border-radius: 6px; box-shadow: 0 12px 32px rgba(60, 50, 40, .16);
