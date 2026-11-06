@@ -3,6 +3,7 @@
 //   data-email          link text and href become the address
 //   data-email-subject  href only (the link keeps its own text), with that subject
 //   data-phone          link text and href become the phone number
+//   data-whatsapp       href opens a WhatsApp chat with us, with this message already typed (the link keeps its text)
 (function () {
 	var email = ['masanuntii', 'gmail.com'].join('@')
 	var phone = ['+40', '758', '30', '55', '49']
@@ -27,5 +28,9 @@
 	document.querySelectorAll('[data-phone]').forEach(function (a) {
 		a.href = 'tel:' + phone.join('')
 		a.textContent = phone.join(' ')
+	})
+	document.querySelectorAll('[data-whatsapp]').forEach(function (a) {
+		a.href = 'https://wa.me/' + phone.join('').slice(1) + '?text=' + encodeURIComponent(a.getAttribute('data-whatsapp'))
+		newTab(a)
 	})
 })()
