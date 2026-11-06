@@ -39,8 +39,9 @@
   <script src="js/contact.js" defer></script>
   <script src="js/carousel.js" defer></script>
   <script src="js/tabs.js" defer></script>
+  <script src="js/nav.js" defer></script>
 <!--  Umami script-->
-  <script defer src="https://cloud.umami.is/script.js" data-domains="oglindasalii.ro,editor.oglindasalii.ro" data-website-id="b02f2590-6648-4021-91e8-eb6b10dfd2ad"></script>
+  <script defer src="https://cloud.umami.is/script.js" data-exclude-hash="true" data-domains="oglindasalii.ro,editor.oglindasalii.ro" data-website-id="b02f2590-6648-4021-91e8-eb6b10dfd2ad"></script>
   <!-- Structured data -->
   <script type="application/ld+json">
   {
@@ -191,98 +192,46 @@
       </div>
     </section>
 
-    <!-- Șabloane -->
+    <!-- Șabloane: only real editor templates, as a grid (people compare them). Custom designs live in Design personalizat.
+         Placeholders for now (not clickable). Swap each one for a card like this when its template is in the editor
+         (the editor reads ?sablon=<id> and opens that template):
+           <li>
+             <a class="card" href="https://editor.oglindasalii.ro/?sablon=ID" data-umami-event="cta-sablon" data-umami-event-sablon="ID">
+               <div class="card__frame card__frame--landscape">
+                 <img src="img/sablon-ID-900.webp" srcset="img/sablon-ID-450.webp 450w, img/sablon-ID-650.webp 650w, img/sablon-ID-900.webp 900w" sizes="(min-width: 1200px) 342px, (min-width: 900px) calc(33vw - 50px), (min-width: 560px) calc(50vw - 52px), calc(100vw - 68px)" width="900" height="636" loading="lazy" decoding="async"
+                      alt="Șablon oglinda sălii ...">
+               </div>
+               <div class="card__meta"><h3 class="card__name">Nume șablon</h3><span class="card__type">pe mese</span></div>
+             </a>
+           </li> -->
     <section class="section" id="sabloane" aria-labelledby="titlu-sabloane">
       <div class="wrap">
-        <div class="gallery-head">
-          <div class="section-head">
-            <p class="eyebrow">Design original</p>
-            <h2 class="h2" id="titlu-sabloane">Șabloane desenate de noi, de la zero</h2>
-            <p class="muted">Nu sunt modele luate de pe internet: fiecare șablon e creat de noi, cu ornamentele și fonturile lui. Le personalizați gratuit în editor.</p>
-          </div>
+        <div class="section-head">
+          <p class="eyebrow">Șabloane în editor</p>
+          <h2 class="h2" id="titlu-sabloane">Alege un șablon și începe</h2>
+          <p class="muted">Fiecare șablon se deschide direct în editor. Adaugi mesele, încarci lista de invitați și schimbi textele, fonturile și culorile.</p>
         </div>
 
-        <!-- Two parts: the templates in the editor, then the same templates at the real weddings they were first drawn for -->
-        <h3 class="subhead">Gata de folosit în editor</h3>
         <ul class="gallery gallery--landscape">
           <li>
-            <a class="card" href="https://editor.oglindasalii.ro/" data-umami-event="cta-sablon" data-umami-event-sablon="sablon-hexagon-auriu">
-              <div class="card__frame card__frame--landscape">
-                <img src="img/sablon-hexagon-auriu-900.webp" srcset="img/sablon-hexagon-auriu-450.webp 450w, img/sablon-hexagon-auriu-650.webp 650w, img/sablon-hexagon-auriu-900.webp 900w" sizes="(min-width: 1200px) 342px, (min-width: 900px) calc(33vw - 50px), (min-width: 560px) calc(50vw - 52px), calc(100vw - 68px)" width="900" height="637" loading="lazy" decoding="async"
-                     alt="Șablon oglinda sălii cu hexagoane aurii și ramuri verzi, invitați grupați pe mese">
-              </div>
-              <div class="card__meta"><h4 class="card__name">Hexagon auriu</h4><span class="card__type">pe mese</span></div>
-            </a>
+            <div class="card card--placeholder" aria-hidden="true">
+              <div class="card__frame card__frame--landscape"><span class="card__soon">Șablon 1 · în curând</span></div>
+              <div class="card__meta"><h3 class="card__name">Nume șablon</h3><span class="card__type">pe mese</span></div>
+            </div>
           </li>
           <li>
-              <a class="card" href="https://editor.oglindasalii.ro/" data-umami-event="cta-sablon" data-umami-event-sablon="sablon-botanic">
-              <div class="card__frame card__frame--landscape">
-                <img src="img/sablon-botanic-900.webp" srcset="img/sablon-botanic-450.webp 450w, img/sablon-botanic-650.webp 650w, img/sablon-botanic-900.webp 900w" sizes="(min-width: 1200px) 342px, (min-width: 900px) calc(33vw - 50px), (min-width: 560px) calc(50vw - 52px), calc(100vw - 68px)" width="900" height="636" loading="lazy" decoding="async"
-                     alt="Șablon oglinda sălii cu frunze în acuarelă și stropi aurii, invitați în ordine alfabetică">
-              </div>
-              <div class="card__meta"><h4 class="card__name">Botanic</h4><span class="card__type">alfabetic</span></div>
-            </a>
+            <div class="card card--placeholder" aria-hidden="true">
+              <div class="card__frame card__frame--landscape"><span class="card__soon">Șablon 2 · în curând</span></div>
+              <div class="card__meta"><h3 class="card__name">Nume șablon</h3><span class="card__type">pe mese</span></div>
+            </div>
           </li>
           <li>
-            <a class="card" href="https://editor.oglindasalii.ro/" data-umami-event="cta-sablon" data-umami-event-sablon="sablon-miri-ilustrati">
-              <div class="card__frame card__frame--landscape">
-                <img src="img/sablon-miri-ilustrati-900.webp" srcset="img/sablon-miri-ilustrati-450.webp 450w, img/sablon-miri-ilustrati-650.webp 650w, img/sablon-miri-ilustrati-900.webp 900w" sizes="(min-width: 1200px) 342px, (min-width: 900px) calc(33vw - 50px), (min-width: 560px) calc(50vw - 52px), calc(100vw - 68px)" width="900" height="636" loading="lazy" decoding="async"
-                     alt="Șablon oglinda sălii cu miri ilustrați și inimioare, invitați în ordine alfabetică">
-              </div>
-              <div class="card__meta"><h4 class="card__name">Miri ilustrați</h4><span class="card__type">alfabetic</span></div>
-            </a>
+            <div class="card card--placeholder" aria-hidden="true">
+              <div class="card__frame card__frame--landscape"><span class="card__soon">Șablon 3 · în curând</span></div>
+              <div class="card__meta"><h3 class="card__name">Nume șablon</h3><span class="card__type">pe mese</span></div>
+            </div>
           </li>
         </ul>
-
-        <ul class="gallery gallery--portrait">
-          <li>
-            <a class="card" href="https://editor.oglindasalii.ro/" data-umami-event="cta-sablon" data-umami-event-sablon="sablon-roz-clasic">
-              <div class="card__frame card__frame--portrait">
-                <img src="img/sablon-roz-clasic-495.webp" srcset="img/sablon-roz-clasic-300.webp 300w, img/sablon-roz-clasic-495.webp 495w" sizes="(min-width: 560px) 192px, calc(50vw - 55px)" width="495" height="700" loading="lazy" decoding="async"
-                     alt="Șablon oglinda sălii roz, cu ornamente caligrafice și miri ilustrați, invitați grupați pe mese">
-              </div>
-              <div class="card__meta"><h4 class="card__name">Roz clasic</h4><span class="card__type">pe mese</span></div>
-            </a>
-          </li>
-          <li>
-            <a class="card" href="https://editor.oglindasalii.ro/" data-umami-event="cta-sablon" data-umami-event-sablon="sablon-floral-auriu">
-              <div class="card__frame card__frame--portrait">
-                <img src="img/sablon-floral-auriu-495.webp" srcset="img/sablon-floral-auriu-300.webp 300w, img/sablon-floral-auriu-495.webp 495w" sizes="(min-width: 560px) 192px, calc(50vw - 55px)" width="495" height="700" loading="lazy" decoding="async"
-                     alt="Șablon oglinda sălii cu chenar floral auriu și siluetă personalizată a mirilor, ordine alfabetică">
-              </div>
-              <div class="card__meta"><h4 class="card__name">Floral auriu</h4><span class="card__type">alfabetic</span></div>
-            </a>
-          </li>
-        </ul>
-
-        <div class="real">
-          <h3 class="subhead">La nunți reale</h3>
-          <p class="muted">Primele trei șabloane le-am desenat de la zero pentru nunțile unor cupluri. Așa arată la intrarea în sală.</p>
-          <ul class="gallery gallery--landscape">
-            <li>
-              <figure class="photo">
-                <img src="img/oglinda-salii-sevalet-lemn-900.webp" srcset="img/oglinda-salii-sevalet-lemn-600.webp 600w, img/oglinda-salii-sevalet-lemn-900.webp 900w" sizes="(min-width: 1200px) 370px, (min-width: 900px) calc(33vw - 30px), (min-width: 560px) calc(50vw - 30px), calc(100vw - 40px)" width="1200" height="900" loading="lazy" decoding="async"
-                     alt="Oglinda sălii cu hexagon auriu și invitații împărțiți pe 8 mese, pe un șevalet de lemn">
-                <figcaption><b>Hexagon auriu</b> Pe șevalet de lemn · mai 2023</figcaption>
-              </figure>
-            </li>
-            <li>
-              <figure class="photo">
-                <img src="img/oglinda-salii-rama-aurie-900.webp" srcset="img/oglinda-salii-rama-aurie-600.webp 600w, img/oglinda-salii-rama-aurie-900.webp 900w" sizes="(min-width: 1200px) 370px, (min-width: 900px) calc(33vw - 30px), (min-width: 560px) calc(50vw - 30px), calc(100vw - 40px)" width="1400" height="1050" loading="lazy" decoding="async"
-                     alt="Oglinda sălii cu frunze în acuarelă, într-o ramă aurie pe șevalet la intrarea în sala de nuntă">
-                <figcaption><b>Botanic</b> Într-o ramă aurie · iunie 2023</figcaption>
-              </figure>
-            </li>
-            <li>
-              <figure class="photo">
-                <img src="img/oglinda-salii-suport-alb-900.webp" srcset="img/oglinda-salii-suport-alb-600.webp 600w, img/oglinda-salii-suport-alb-900.webp 900w" sizes="(min-width: 1200px) 370px, (min-width: 900px) calc(33vw - 30px), (min-width: 560px) calc(50vw - 30px), calc(100vw - 40px)" width="1000" height="750" loading="lazy" decoding="async"
-                     alt="Oglinda sălii cu miri ilustrați și invitați în ordine alfabetică, pe un suport alb în sala de nuntă">
-                <figcaption><b>Miri ilustrați</b> Pe un suport alb · octombrie 2022</figcaption>
-              </figure>
-            </li>
-          </ul>
-          <a class="link-arrow" href="#design-personalizat" data-umami-event="cta-nunti-reale">Vreți unul desenat doar pentru voi? →</a>
-        </div>
       </div>
     </section>
 
@@ -314,29 +263,54 @@
             <p class="offer__urgent"><b>E urgent?</b> Scrieți-ne pe WhatsApp, acolo răspundem cel mai repede.</p>
           </div>
           <!-- Carousel: add a slide by copying a <figure> (js/carousel.js builds the dots and arrows) -->
-          <div class="offer__example carousel" role="region" aria-roledescription="carousel" aria-label="Exemplu de design personalizat: oglinda sălii, invitația, meniul și numărul de masă pentru aceeași nuntă">
+          <div class="offer__example carousel" role="region" aria-roledescription="carousel" aria-label="Exemple de design personalizat">
             <div class="carousel__track">
-              <!-- The slides are one wedding's set, in the same style -->
+              <!-- At real weddings, then one wedding's set in the same style (the plan is the hero photo), then other custom designs -->
+              <figure class="carousel__slide">
+                <img src="img/oglinda-salii-rama-aurie-1200.webp" srcset="img/oglinda-salii-rama-aurie-600.webp 600w, img/oglinda-salii-rama-aurie-900.webp 900w, img/oglinda-salii-rama-aurie-1200.webp 1200w" sizes="(min-width: 1200px) 484px, (min-width: 900px) calc(50vw - 120px), calc(100vw - 100px)" width="1400" height="1050" loading="lazy" decoding="async"
+                     alt="Oglinda sălii personalizată, cu frunze în acuarelă, într-o ramă aurie pe șevalet la intrarea în sala de nuntă">
+                <figcaption>La intrarea în sală, într-o ramă aurie</figcaption>
+              </figure>
+              <figure class="carousel__slide">
+                <img src="img/oglinda-salii-suport-alb-900.webp" srcset="img/oglinda-salii-suport-alb-600.webp 600w, img/oglinda-salii-suport-alb-900.webp 900w" sizes="(min-width: 1200px) 484px, (min-width: 900px) calc(50vw - 120px), calc(100vw - 100px)" width="1000" height="750" loading="lazy" decoding="async"
+                     alt="Oglinda sălii personalizată, cu miri ilustrați și invitați în ordine alfabetică, pe un suport alb în sala de nuntă">
+                <figcaption>În sală, pe un suport alb</figcaption>
+              </figure>
+              <figure class="carousel__slide">
+                <img src="img/oglinda-salii-sevalet-lemn-900.webp" srcset="img/oglinda-salii-sevalet-lemn-600.webp 600w, img/oglinda-salii-sevalet-lemn-900.webp 900w, img/oglinda-salii-sevalet-lemn-1200.webp 1200w" sizes="(min-width: 1200px) 484px, (min-width: 900px) calc(50vw - 120px), calc(100vw - 100px)" width="1200" height="900" loading="lazy" decoding="async"
+                     alt="Oglinda sălii personalizată, cu numele mirilor într-un hexagon auriu și invitații împărțiți pe 8 mese, pe un șevalet de lemn">
+                <figcaption>Un set pentru aceeași nuntă: oglinda sălii, pe șevalet</figcaption>
+              </figure>
               <figure class="carousel__slide">
                 <img class="carousel__img--whole" src="img/oglinda-salii-hexagon-detaliu-900.webp" srcset="img/oglinda-salii-hexagon-detaliu-500.webp 500w, img/oglinda-salii-hexagon-detaliu-700.webp 700w, img/oglinda-salii-hexagon-detaliu-900.webp 900w" sizes="(min-width: 1200px) 484px, (min-width: 900px) calc(50vw - 120px), calc(100vw - 100px)" width="900" height="395" loading="lazy" decoding="async"
                      alt="Detaliu din oglinda sălii personalizată: numele mirilor într-un hexagon auriu cu frunze, între zi și an">
-                <figcaption>Oglinda sălii, desenată pentru o singură nuntă</figcaption>
+                <figcaption>Același set: detaliu din oglinda sălii</figcaption>
               </figure>
               <figure class="carousel__slide">
                 <img src="img/invitatie-personalizata-900.webp" srcset="img/invitatie-personalizata-500.webp 500w, img/invitatie-personalizata-700.webp 700w, img/invitatie-personalizata-900.webp 900w" sizes="(min-width: 1200px) 484px, (min-width: 900px) calc(50vw - 120px), calc(100vw - 100px)" width="900" height="1530" loading="lazy" decoding="async"
                      style="object-position: 50% 28%"
                      alt="Mirele ține în mâini invitația de nuntă personalizată, cu numele mirilor într-un hexagon auriu cu frunze">
-                <figcaption>Invitația, în același stil</figcaption>
+                <figcaption>Același set: invitația</figcaption>
               </figure>
               <figure class="carousel__slide">
                 <img src="img/nunta-masa-meniu-900.webp" srcset="img/nunta-masa-meniu-500.webp 500w, img/nunta-masa-meniu-700.webp 700w, img/nunta-masa-meniu-900.webp 900w" sizes="(min-width: 1200px) 484px, (min-width: 900px) calc(50vw - 120px), calc(100vw - 100px)" width="900" height="637" loading="lazy" decoding="async"
                      alt="Meniu de nuntă personalizat, cu chenar auriu și frunze, pe masa festivă lângă un platou cu covrigei">
-                <figcaption>Meniul, în același stil</figcaption>
+                <figcaption>Același set: meniul</figcaption>
               </figure>
               <figure class="carousel__slide">
                 <img src="img/numar-masa-nunta-900.webp" srcset="img/numar-masa-nunta-500.webp 500w, img/numar-masa-nunta-700.webp 700w, img/numar-masa-nunta-900.webp 900w" sizes="(min-width: 1200px) 484px, (min-width: 900px) calc(50vw - 120px), calc(100vw - 100px)" width="900" height="637" loading="lazy" decoding="async"
                      alt="Masă rotundă de nuntă aranjată, cu numărul mesei pe un suport de lemn lângă aranjamentul floral">
-                <figcaption>Numărul de masă, în același stil</figcaption>
+                <figcaption>Același set: numărul de masă</figcaption>
+              </figure>
+              <figure class="carousel__slide">
+                <img class="carousel__img--whole" src="img/sablon-roz-clasic-495.webp" srcset="img/sablon-roz-clasic-300.webp 300w, img/sablon-roz-clasic-495.webp 495w" sizes="(min-width: 1200px) 484px, (min-width: 900px) calc(50vw - 120px), calc(100vw - 100px)" width="495" height="700" loading="lazy" decoding="async"
+                     alt="Oglinda sălii personalizată, roz, cu ornamente caligrafice și miri ilustrați, invitați grupați pe mese">
+                <figcaption>Roz, cu ornamente caligrafice</figcaption>
+              </figure>
+              <figure class="carousel__slide">
+                <img class="carousel__img--whole" src="img/sablon-floral-auriu-495.webp" srcset="img/sablon-floral-auriu-300.webp 300w, img/sablon-floral-auriu-495.webp 495w" sizes="(min-width: 1200px) 484px, (min-width: 900px) calc(50vw - 120px), calc(100vw - 100px)" width="495" height="700" loading="lazy" decoding="async"
+                     alt="Oglinda sălii personalizată, cu chenar floral auriu și silueta mirilor, invitați în ordine alfabetică">
+                <figcaption>Chenar floral auriu, cu silueta mirilor</figcaption>
               </figure>
             </div>
           </div>

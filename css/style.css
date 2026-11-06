@@ -83,7 +83,7 @@ a { color: var(--plum); }
 a:hover { color: var(--ink); }
 :focus-visible { outline: 2px solid var(--plum); outline-offset: 3px; border-radius: 4px; }
 
-h1, h2, h3, h4 { margin: 0; }
+h1, h2, h3 { margin: 0; }
 p { margin: 0; }
 
 .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
@@ -149,6 +149,8 @@ p { margin: 0; }
 .nav { display: flex; align-items: center; gap: 24px; font-size: 15px; }
 .nav__link { display: none; color: #4F4F4F; text-decoration: none; padding: 10px 0; }
 .nav__link:hover { color: var(--plum); }
+/* The section on screen (js/nav.js) */
+.nav__link[aria-current="location"] { color: var(--plum); text-decoration: underline; text-decoration-color: var(--gold); text-decoration-thickness: 2px; text-underline-offset: 8px; }
 @media (min-width: 1000px) { .nav__link { display: inline; } }
 
 /* Hero */
@@ -219,22 +221,15 @@ p { margin: 0; }
 .card__meta { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
 .card__name { font-family: var(--serif); font-size: 22px; font-weight: 600; line-height: 1.2;}
 .card__type { font-size: 13px; color: var(--ink-muted); white-space: nowrap; }
+/* Placeholder card until the template is in the editor (not a link) */
+.card--placeholder { opacity: .6; }
+.card--placeholder .card__frame { aspect-ratio: 1.414 / 1; display: grid; place-items: center; border: 1px dashed #C9BFB3; }
+.card__soon { font-size: 14px; color: var(--ink-muted); }
 @media (max-width: 559px) {
   .gallery--portrait { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 14px; }
   .gallery--portrait .card__name { font-size: 19px; }
   .gallery--portrait .card__meta { flex-direction: column; gap: 0; }
 }
-
-/* Șabloane, in two parts: "Gata de folosit în editor", then "La nunți reale" (photos from the venue) */
-.subhead { font-family: var(--serif); font-size: 26px; font-weight: 600; line-height: 1.2; margin-bottom: 20px; }
-.real { margin-top: 64px; padding-top: 48px; border-top: 1px solid rgba(60, 50, 40, .12); }
-.real .subhead { margin-bottom: 8px; }
-.real > .muted { max-width: 600px; margin: 0 0 24px; }
-.real .link-arrow { display: inline-block; margin-top: 20px; }
-.photo { margin: 0; display: flex; flex-direction: column; gap: 12px; }
-.photo img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; }
-.photo figcaption { font-size: 13px; color: var(--ink-muted); }
-.photo b { display: block; font-family: var(--serif); font-size: 22px; font-weight: 600; line-height: 1.2; color: var(--ink); }
 
 /* Section links land clear of the sticky header */
 #cum-functioneaza, #sabloane, #design-personalizat { scroll-margin-top: 68px; }
