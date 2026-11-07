@@ -86,11 +86,15 @@
           { "@type": "Question", "name": "Trebuie să ne facem cont?",
             "acceptedAnswer": { "@type": "Answer", "text": "Nu. Puteți crea și descărca planul fără cont și fără adresă de email." } },
           { "@type": "Question", "name": "Putem încărca lista de invitați din Excel?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Da. Încărcați un fișier Excel sau CSV cu numele invitaților și numărul mesei. Mesele pot avea număr diferit de invitați." } },
+            "acceptedAnswer": { "@type": "Answer", "text": "Da. Încărcați un fișier Excel sau CSV cu numele invitaților și numărul mesei. Mesele pot avea număr diferit de invitați. Editorul recunoaște singur 18 formate de listă, de exemplu masa și numele pe coloane, o coloană pentru fiecare masă sau masa și numele în aceeași celulă." } },
+          { "@type": "Question", "name": "Câți invitați și câte mese putem avea?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Nu există o limită fixă. Contează doar cât încape pe formatul ales: pentru o listă mare alegeți A2 sau A1." } },
           { "@type": "Question", "name": "În ce format primim planul?",
             "acceptedAnswer": { "@type": "Answer", "text": "În PDF, PNG sau JPG. Pentru print alegeți formatul A1, A2, A3 sau A4, iar pentru ecranele TV din sală, Full HD sau 4K. În ambele cazuri, pe verticală sau pe orizontală." } },
           { "@type": "Question", "name": "Putem muta mesele după ce sunt așezate automat?",
             "acceptedAnswer": { "@type": "Answer", "text": "Da. Editorul propune o așezare, iar voi puteți rearanja mesele și redenumi fiecare masă, de exemplu „Paris”." } },
+          { "@type": "Question", "name": "Unde se salvează proiectul și lista de invitați?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Doar în browserul vostru, pe dispozitivul pe care lucrați. Nu le trimitem pe niciun server și nu avem acces la ele. Dacă ștergeți datele browserului sau treceți pe alt calculator, proiectul nu vă urmează, așa că păstrați și o copie a listei de invitați." } },
           { "@type": "Question", "name": "Puteți face un design doar pentru nunta noastră?",
             "acceptedAnswer": { "@type": "Answer", "text": "Da. Desenăm oglinda sălii de la zero, după tema nunții voastre, și putem realiza în același stil invitațiile, meniurile, numerele de masă și un logo personalizat. Oglinda sălii personalizată pornește de la 50 lei, iar prima schiță o primiți în 2–3 zile." } },
           { "@type": "Question", "name": "Cât costă?",
@@ -389,7 +393,40 @@
           </details>
           <details>
             <summary>Putem încărca lista de invitați din Excel?</summary>
-            <p>Da. Încărcați un fișier Excel sau CSV cu numele invitaților și numărul mesei. Mesele pot avea număr diferit de invitați.</p>
+            <p>Da. Încărcați un fișier Excel sau CSV cu numele invitaților și numărul mesei. Mesele pot avea număr diferit de invitați. Nu trebuie să vă refaceți lista: editorul recunoaște singur 18 formate, de exemplu:</p>
+            <!-- Three of the 18 tabs in the example sheet, the most different layouts. Sheet: Google Sheets, "anyone with the link can view".
+                 Linked, not embedded: an iframe would load Google's code and cookies, and confidentialitate.html says the site uses none -->
+            <div class="models">
+              <figure class="model">
+                <figcaption>Masa și numele, pe coloane</figcaption>
+                <table>
+                  <thead><tr><th>Masa</th><th>Nume și prenume</th></tr></thead>
+                  <tbody><tr><td>1</td><td>Popescu Ion</td></tr><tr><td>19</td><td>Popescu Maria</td></tr><tr><td>4</td><td>Dumitru Ana</td></tr></tbody>
+                </table>
+              </figure>
+              <figure class="model">
+                <figcaption>O coloană pentru fiecare masă</figcaption>
+                <table>
+                  <thead><tr><th>Masa 1</th><th>Masa 2</th></tr></thead>
+                  <tbody><tr><td>Popescu Ion</td><td>Iacob Crăciun</td></tr><tr><td>Andrei Popescu</td><td>Darius Crișan</td></tr><tr><td>Nicolae Ispas</td><td>Flavia Bunea</td></tr></tbody>
+                </table>
+              </figure>
+              <figure class="model">
+                <figcaption>Masa și numele, în aceeași celulă</figcaption>
+                <table>
+                  <tbody><tr><td>3.Maria Cristina Constantin</td></tr><tr><td>9. Maria Sârbu</td></tr><tr><td>Camelia Țurcanu - 20</td></tr></tbody>
+                </table>
+              </figure>
+            </div>
+            <p>Merg și coloanele în altă ordine, antetul în engleză sau fără antet, numele și prenumele separate, cuplurile pe un singur rând („Ion și Maria Popescu”) sau coloane în plus, ca telefonul ori meniul.</p>
+            <p class="models__links">
+              <a href="https://docs.google.com/spreadsheets/d/1RTIg9mt68PU0BENevgs86tZJt0TaI91OWJQsuCIEGjc/edit?usp=sharing" target="_blank" rel="noopener" data-umami-event="model-lista" data-umami-event-tip="vezi">Vedeți toate cele 18 modele →</a>
+              <a href="https://docs.google.com/spreadsheets/d/1RTIg9mt68PU0BENevgs86tZJt0TaI91OWJQsuCIEGjc/export?format=xlsx" data-umami-event="model-lista" data-umami-event-tip="descarca">Descărcați modelele în Excel</a>
+            </p>
+          </details>
+          <details>
+            <summary>Câți invitați și câte mese putem avea?</summary>
+            <p>Nu există o limită fixă. Contează doar cât încape pe formatul ales: pentru o listă mare alegeți A2 sau A1.</p>
           </details>
           <details>
             <summary>În ce format primim planul?</summary>
@@ -398,6 +435,10 @@
           <details>
             <summary>Putem muta mesele după ce sunt așezate automat?</summary>
             <p>Da. Editorul propune o așezare, iar voi puteți rearanja mesele și redenumi fiecare masă, de exemplu „Paris”.</p>
+          </details>
+          <details>
+            <summary>Unde se salvează proiectul și lista de invitați?</summary>
+            <p>Doar în browserul vostru, pe dispozitivul pe care lucrați. Nu le trimitem pe niciun server și nu avem acces la ele. Dacă ștergeți datele browserului sau treceți pe alt calculator, proiectul nu vă urmează, așa că păstrați și o copie a listei de invitați. Detalii în <a href="confidentialitate.html">politica de confidențialitate</a>.</p>
           </details>
           <details>
             <summary>Puteți face un design doar pentru nunta noastră?</summary>

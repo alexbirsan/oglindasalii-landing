@@ -377,6 +377,17 @@ p { margin: 0; }
 }
 .faq details[open] summary::after { transform: rotate(45deg); }
 .faq details p { padding: 0 0 22px; color: var(--ink-soft); }
+/* Example guest lists in the Excel answer */
+.models { display: grid; gap: 16px; margin: -6px 0 22px; }
+@media (min-width: 700px) { .models { grid-template-columns: repeat(3, 1fr); } }
+.model { margin: 0; min-width: 0; }
+.model figcaption { font-size: 13px; color: var(--ink-muted); margin-bottom: 6px; }
+.model table { width: 100%; border-collapse: collapse; font-size: 13px; background: var(--surface); }
+.model th, .model td { border: 1px solid var(--line); padding: 5px 8px; text-align: left; vertical-align: top; }
+.model th { background: var(--sand); font-weight: 500; color: var(--ink); }
+.model td { color: var(--ink-soft); }
+.models__links { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+.models__links a { color: var(--plum); font-weight: 500; }
 
 /* Closing call to action */
 .final {
