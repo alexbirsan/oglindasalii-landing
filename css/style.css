@@ -329,6 +329,7 @@ p { margin: 0; }
 .quote blockquote p::before { content: '„'; }
 .quote blockquote p::after { content: '”'; }
 .quote figcaption { font-size: 14px; color: var(--ink-muted); padding-top: 12px; border-top: 1px solid var(--line); }
+.quote figcaption b { display: block; font-weight: 500; color: var(--ink); }
 .offer__example img {
   width: 100%; aspect-ratio: 1.414 / 1; object-fit: cover;
   background: #fff; border-radius: 6px; box-shadow: 0 12px 32px rgba(60, 50, 40, .16);
