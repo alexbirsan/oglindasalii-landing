@@ -26,7 +26,7 @@ make() {
 
 # Photos (quality 80): hero, and the "La nunți reale" photos in the Șabloane section (4:3)
 # Hero: portrait photo cropped to the 4:3 frame around the plan on the easel
-crop="0 1450 3078 2308"
+crop="185 1906 2916 2187"
 make oglinda-salii-sevalet-lemn.jpg     80 600 900 1200
 make oglinda-salii-rama-aurie.webp      80 600 900 1200
 make oglinda-salii-suport-alb.webp      80 600 900
