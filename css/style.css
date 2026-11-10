@@ -205,11 +205,6 @@ p { margin: 0; }
 @media (min-width: 768px) { .hero__copy { gap: 24px; } }
 .hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; }
 .hero__note { font-size: 14px; color: var(--ink-muted); }
-.hero__quote { margin: 0; padding-left: 16px; border-left: 2px solid var(--gold); }
-.hero__quote blockquote { margin: 0; font-family: var(--serif); font-size: 19px; font-style: italic; line-height: 1.4; color: var(--ink); }
-.hero__quote blockquote p::before { content: '„'; }
-.hero__quote blockquote p::after { content: '”'; }
-.hero__quote figcaption { margin-top: 6px; font-size: 13px; color: var(--ink-muted); }
 .hero__media img {
   width: 100%; aspect-ratio: 4 / 3; object-fit: cover;
   border-radius: 16px; box-shadow: 0 24px 60px rgba(60, 50, 40, .18);
