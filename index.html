@@ -81,6 +81,61 @@
         "publisher": { "@id": "https://oglindasalii.ro/#organization" }
       },
       {
+        "@type": "VideoObject",
+        "name": "Cum faci oglinda sălii pentru nuntă în 30 de secunde | Proiect nou",
+        "description": "Cum porniți un proiect nou în editor: alegeți formatul foii, scrieți numele mirilor, încărcați lista de invitați și alegeți culoarea temei.",
+        "thumbnailUrl": "https://oglindasalii.ro/img/tutorial-proiect-nou-1280.webp",
+        "uploadDate": "2026-11-12T04:37:55-08:00",
+        "duration": "PT28S",
+        "embedUrl": "https://www.youtube.com/embed/18TG3UvF7zo",
+        "inLanguage": "ro-RO",
+        "publisher": { "@id": "https://oglindasalii.ro/#organization" }
+      },
+      {
+        "@type": "VideoObject",
+        "name": "Mută mesele și editează invitații direct pe foaie | Oglinda sălii",
+        "description": "Cum mutați mesele și editați invitații direct pe plan: trageți o masă peste alta ca să le schimbați locul, redenumiți mesele și schimbați, ștergeți sau adăugați invitați.",
+        "thumbnailUrl": "https://oglindasalii.ro/img/tutorial-mese-1280.webp",
+        "uploadDate": "2026-11-12T04:42:22-08:00",
+        "duration": "PT31S",
+        "embedUrl": "https://www.youtube.com/embed/32waYdsXHxc",
+        "inLanguage": "ro-RO",
+        "publisher": { "@id": "https://oglindasalii.ro/#organization" }
+      },
+      {
+        "@type": "VideoObject",
+        "name": "Fonturi, culori și ornamente pentru oglinda sălii | Descarcă planul ca imagine",
+        "description": "Cum dați planului stilul nunții: alegeți o pereche de fonturi, schimbați culorile și mărimea textelor, adăugați ornamente și o imagine între numele mirilor, apoi descărcați planul ca imagine JPG.",
+        "thumbnailUrl": "https://oglindasalii.ro/img/tutorial-font-1280.webp",
+        "uploadDate": "2026-11-12T05:25:35-08:00",
+        "duration": "PT40S",
+        "embedUrl": "https://www.youtube.com/embed/I3hB6lF8txU",
+        "inLanguage": "ro-RO",
+        "publisher": { "@id": "https://oglindasalii.ro/#organization" }
+      },
+      {
+        "@type": "VideoObject",
+        "name": "Lista alfabetică a invitaților, gata de tipar în PDF | Oglinda sălii",
+        "description": "Cum treceți de la planul pe mese la lista alfabetică a invitaților: un clic pe un invitat îi arată pe toți de la masa lui, schimbați numele direct din listă și descărcați lista în PDF, gata de tipar.",
+        "thumbnailUrl": "https://oglindasalii.ro/img/tutorial-alfabetic-1280.webp",
+        "uploadDate": "2026-11-12T05:28:03-08:00",
+        "duration": "PT20S",
+        "embedUrl": "https://www.youtube.com/embed/ypYVt6b9S-8",
+        "inLanguage": "ro-RO",
+        "publisher": { "@id": "https://oglindasalii.ro/#organization" }
+      },
+      {
+        "@type": "VideoObject",
+        "name": "Adaugă propria imagine și data nunții pe oglinda sălii",
+        "description": "Cum înlocuiți numele mirilor cu monograma sau ilustrația voastră: ștergeți numele, adăugați o imagine din meniul „Adaugă” și puneți data nunții de o parte și de alta a imaginii.",
+        "thumbnailUrl": "https://oglindasalii.ro/img/tutorial-imagine-1280.webp",
+        "uploadDate": "2026-11-12T05:30:39-08:00",
+        "duration": "PT23S",
+        "embedUrl": "https://www.youtube.com/embed/vLgADjRO5NY",
+        "inLanguage": "ro-RO",
+        "publisher": { "@id": "https://oglindasalii.ro/#organization" }
+      },
+      {
         "@type": "FAQPage",
         "mainEntity": [
           { "@type": "Question", "name": "Trebuie să ne facem cont?",
@@ -158,50 +213,70 @@
       </div>
     </section>
 
-    <!-- Cum funcționează: silent clips from the editor (made in Remotion), one per tab. js/tabs.js loads a clip only
-         when the section is on screen, plays the tabs in order until the visitor picks one, then loops that one.
-         Clips: video/<name>.mp4 (H.264, 1280×720, no audio) + video/<name>.webp poster (first frame) -->
+    <!-- Cum funcționează: one YouTube tutorial per tab. A clip is a link to the video with its thumbnail
+         (img/tutorial-<name>-<width>.webp, from the YouTube thumbnail); js/tabs.js swaps it for the player on click,
+         so nothing loads from YouTube before that (see "Cookie-uri" in confidentialitate.html).
+         To add a clip: copy a tab and its panel (data-youtube = the video ID), add its thumbnail to scripts/images.sh
+         and a VideoObject to the JSON-LD in <head> -->
     <section class="section section--white" id="cum-functioneaza" aria-labelledby="titlu-pasi">
       <div class="wrap">
         <div class="section-head">
           <h2 class="h2" id="titlu-pasi">Cum funcționează</h2>
-          <p class="muted">Patru clipuri scurte, direct din editor.</p>
+          <p class="muted">Cinci clipuri scurte, direct din editor.</p>
         </div>
         <div class="tabs" data-tabs>
           <div class="tabs__list" role="tablist" aria-label="Pașii din editor">
           <button class="tab" type="button" role="tab" id="tab-design" aria-controls="clip-design" aria-selected="true" data-umami-event="tutorial-tab" data-umami-event-tab="design">
             <span class="tab__num" aria-hidden="true">1</span>
-            <span class="tab__text"><span class="tab__title">Design rapid în 3 pași</span><span class="tab__desc">Alegeți hârtia, scrieți numele mirilor, alegeți culoarea temei și încărcați lista. Gata în câteva minute.</span></span>
-            <span class="tab__progress" aria-hidden="true"></span>
+            <span class="tab__text"><span class="tab__title">Proiect nou în 30 de secunde</span><span class="tab__desc">Alegeți hârtia, scrieți numele mirilor, încărcați lista și alegeți culoarea temei.</span></span>
           </button>
           <button class="tab" type="button" role="tab" id="tab-mese" aria-controls="clip-mese" aria-selected="false" tabindex="-1" data-umami-event="tutorial-tab" data-umami-event-tab="mese">
             <span class="tab__num" aria-hidden="true">2</span>
-            <span class="tab__text"><span class="tab__title">Aranjați mesele</span><span class="tab__desc">Mesele se așază singure. Le puteți muta oricând, iar ghidajele le țin aliniate.</span></span>
-            <span class="tab__progress" aria-hidden="true"></span>
+            <span class="tab__text"><span class="tab__title">Mutați mesele și editați invitații</span><span class="tab__desc">Trageți o masă peste alta ca să le schimbați locul. Redenumiți mesele și schimbați, ștergeți sau adăugați invitați direct pe plan.</span></span>
           </button>
           <button class="tab" type="button" role="tab" id="tab-font" aria-controls="clip-font" aria-selected="false" tabindex="-1" data-umami-event="tutorial-tab" data-umami-event-tab="font">
             <span class="tab__num" aria-hidden="true">3</span>
-            <span class="tab__text"><span class="tab__title">Schimbați fontul și culorile</span><span class="tab__desc">Alegeți fontul, mărimea textului și culorile, ca să se potrivească cu tema nunții.</span></span>
-            <span class="tab__progress" aria-hidden="true"></span>
+            <span class="tab__text"><span class="tab__title">Fonturi, culori și ornamente</span><span class="tab__desc">Alegeți o pereche de fonturi, colorați numele mirilor și titlurile meselor și adăugați ornamente, apoi descărcați planul ca imagine JPG.</span></span>
           </button>
-          <button class="tab" type="button" role="tab" id="tab-pdf" aria-controls="clip-pdf" aria-selected="false" tabindex="-1" data-umami-event="tutorial-tab" data-umami-event-tab="pdf">
+          <button class="tab" type="button" role="tab" id="tab-alfabetic" aria-controls="clip-alfabetic" aria-selected="false" tabindex="-1" data-umami-event="tutorial-tab" data-umami-event-tab="alfabetic">
             <span class="tab__num" aria-hidden="true">4</span>
-            <span class="tab__text"><span class="tab__title">Descărcați planul</span><span class="tab__desc">Un clic și primiți planul în PDF, PNG sau JPG, gata de printat sau de pus pe ecranul TV.</span></span>
-            <span class="tab__progress" aria-hidden="true"></span>
+            <span class="tab__text"><span class="tab__title">Listă alfabetică</span><span class="tab__desc">Treceți cu un clic de la planul pe mese la lista alfabetică, schimbați numele direct din listă, apoi descărcați lista în PDF, gata de tipar.</span></span>
+          </button>
+          <button class="tab" type="button" role="tab" id="tab-imagine" aria-controls="clip-imagine" aria-selected="false" tabindex="-1" data-umami-event="tutorial-tab" data-umami-event-tab="imagine">
+            <span class="tab__num" aria-hidden="true">5</span>
+            <span class="tab__text"><span class="tab__title">Imaginea și textul vostru</span><span class="tab__desc">Înlocuiți numele mirilor cu logoul sau monograma voastră și puneți data nunții de o parte și de alta a imaginii.</span></span>
           </button>
           </div>
           <div class="tabs__panels">
           <div class="tabs__panel" role="tabpanel" id="clip-design" aria-labelledby="tab-design">
-            <video muted playsinline preload="none" width="1280" height="720" poster="video/design.webp" data-src="video/design.mp4"></video>
+            <a class="clip" href="https://www.youtube.com/watch?v=18TG3UvF7zo" target="_blank" rel="noopener" data-youtube="18TG3UvF7zo" aria-label="Porniți clipul: Proiect nou în 30 de secunde" data-umami-event="tutorial-play" data-umami-event-tab="design">
+              <img src="img/tutorial-proiect-nou-900.webp" srcset="img/tutorial-proiect-nou-600.webp 600w, img/tutorial-proiect-nou-900.webp 900w, img/tutorial-proiect-nou-1280.webp 1280w" sizes="(min-width: 900px) 60vw, 100vw" width="1280" height="720" alt="" loading="lazy">
+              <span class="clip__play" aria-hidden="true"></span>
+            </a>
           </div>
           <div class="tabs__panel" role="tabpanel" id="clip-mese" aria-labelledby="tab-mese" hidden>
-            <video muted playsinline preload="none" width="1280" height="720" poster="video/mese.webp" data-src="video/mese.mp4"></video>
+            <a class="clip" href="https://www.youtube.com/watch?v=32waYdsXHxc" target="_blank" rel="noopener" data-youtube="32waYdsXHxc" aria-label="Porniți clipul: Mutați mesele și editați invitații" data-umami-event="tutorial-play" data-umami-event-tab="mese">
+              <img src="img/tutorial-mese-900.webp" srcset="img/tutorial-mese-600.webp 600w, img/tutorial-mese-900.webp 900w, img/tutorial-mese-1280.webp 1280w" sizes="(min-width: 900px) 60vw, 100vw" width="1280" height="720" alt="" loading="lazy">
+              <span class="clip__play" aria-hidden="true"></span>
+            </a>
           </div>
           <div class="tabs__panel" role="tabpanel" id="clip-font" aria-labelledby="tab-font" hidden>
-            <video muted playsinline preload="none" width="1280" height="720" poster="video/font.webp" data-src="video/font.mp4"></video>
+            <a class="clip" href="https://www.youtube.com/watch?v=I3hB6lF8txU" target="_blank" rel="noopener" data-youtube="I3hB6lF8txU" aria-label="Porniți clipul: Fonturi, culori și ornamente" data-umami-event="tutorial-play" data-umami-event-tab="font">
+              <img src="img/tutorial-font-900.webp" srcset="img/tutorial-font-600.webp 600w, img/tutorial-font-900.webp 900w, img/tutorial-font-1280.webp 1280w" sizes="(min-width: 900px) 60vw, 100vw" width="1280" height="720" alt="" loading="lazy">
+              <span class="clip__play" aria-hidden="true"></span>
+            </a>
           </div>
-          <div class="tabs__panel" role="tabpanel" id="clip-pdf" aria-labelledby="tab-pdf" hidden>
-            <video muted playsinline preload="none" width="1280" height="720" poster="video/pdf.webp" data-src="video/pdf.mp4"></video>
+          <div class="tabs__panel" role="tabpanel" id="clip-alfabetic" aria-labelledby="tab-alfabetic" hidden>
+            <a class="clip" href="https://www.youtube.com/watch?v=ypYVt6b9S-8" target="_blank" rel="noopener" data-youtube="ypYVt6b9S-8" aria-label="Porniți clipul: Listă alfabetică" data-umami-event="tutorial-play" data-umami-event-tab="alfabetic">
+              <img src="img/tutorial-alfabetic-900.webp" srcset="img/tutorial-alfabetic-600.webp 600w, img/tutorial-alfabetic-900.webp 900w, img/tutorial-alfabetic-1280.webp 1280w" sizes="(min-width: 900px) 60vw, 100vw" width="1280" height="720" alt="" loading="lazy">
+              <span class="clip__play" aria-hidden="true"></span>
+            </a>
+          </div>
+          <div class="tabs__panel" role="tabpanel" id="clip-imagine" aria-labelledby="tab-imagine" hidden>
+            <a class="clip" href="https://www.youtube.com/watch?v=vLgADjRO5NY" target="_blank" rel="noopener" data-youtube="vLgADjRO5NY" aria-label="Porniți clipul: Imaginea și textul vostru" data-umami-event="tutorial-play" data-umami-event-tab="imagine">
+              <img src="img/tutorial-imagine-900.webp" srcset="img/tutorial-imagine-600.webp 600w, img/tutorial-imagine-900.webp 900w, img/tutorial-imagine-1280.webp 1280w" sizes="(min-width: 900px) 60vw, 100vw" width="1280" height="720" alt="" loading="lazy">
+              <span class="clip__play" aria-hidden="true"></span>
+            </a>
           </div>
           </div>
         </div>

@@ -52,6 +52,13 @@ make pe-mese-sablon-floral_embassy.jpg  85 450 650 900
 make pe-mese-sablon-simple_elegant.jpg  85 450 650 900
 make alfabetic-sablon-elegant_gold.jpg  85 300 540
 
+# Tutorial clips (Cum funcționează): the YouTube thumbnail (i.ytimg.com/vi/<video ID>/maxresdefault.jpg), shown until the clip is played
+make tutorial-proiect-nou.jpg 80 600 900 1280
+make tutorial-mese.jpg        80 600 900 1280
+make tutorial-font.jpg        80 600 900 1280
+make tutorial-alfabetic.jpg   80 600 900 1280
+make tutorial-imagine.jpg     80 600 900 1280
+
 # Features: the TV mockup (cropped around the TV) and a plan with the couple's own logo (cropped to the logo and the date)
 crop="1100 120 1130 640"
 make tv-presentation.png 82 400

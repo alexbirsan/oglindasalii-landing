@@ -13,7 +13,7 @@ The host (Netlify / Cloudflare Pages / Vercel) builds the site on every push to 
 - [x] Social icons in the footer (Facebook, Instagram, Pinterest, YouTube) link to the real profiles on every page and are listed as `"sameAs": [...]` in the `Organization` JSON-LD.
 - [x] Umami: `confidentialitate.html` says Umami analytics is used, but no Umami script is on the site or in the editor yet. Add it, or drop that section.
 - [x] Editor link: all buttons point to `/editor`; confirm that's the live editor URL.
-- [ ] Tutorial clips: export the 4 clips + posters from Remotion into `video/` (see Files). Until then the "Cum funcționează" tabs show an empty frame.
+- [x] Tutorial clips: the 5 "Cum funcționează" clips are on YouTube and on the page (see the comment above the section in `index.html`).
 - [ ] Editor templates: remove Rock from the template list in the editor project (`oglinda-salii`).
 
 ## After going live
@@ -39,8 +39,7 @@ The host (Netlify / Cloudflare Pages / Vercel) builds the site on every push to 
 - `confidentialitate.html`, `termeni.html`: privacy policy and terms (same header/footer as `index.html`; keep them in sync)
 - `css/style.css`: mobile-first styles; brand colours are in `:root`. Every page must link it exactly as `<link rel="stylesheet" href="css/style.css">` (the build replaces that tag with the inlined CSS)
 - `js/carousel.js`: arrows and dots for `.carousel` (the "Design personalizat" photos); add a slide by copying a `<figure class="carousel__slide">`
-- `js/tabs.js`: the "Cum funcționează" tabs (`[data-tabs]`): loads a clip only once the section is on screen, plays the tabs in order until the visitor picks one, then loops that one
-- `video/`: the tutorial clips (made in Remotion), one per tab: `<name>.mp4` (H.264, 1280×720, no audio, ideally under ~1.5 MB) and `<name>.webp` poster (first frame, e.g. `npx remotion still`). Names: `design`, `mese`, `font`, `pdf` (see `data-src`/`poster` in `index.html`). Cached for a year like `img/`, so give a changed clip a new file name
+- `js/tabs.js`: the "Cum funcționează" tabs (`[data-tabs]`): one YouTube clip per tab, shown as a thumbnail link; the player loads from youtube-nocookie.com only on click (`confidentialitate.html` says so under "Cookie-uri")
 - `js/contact.js`: builds the email and phone links at runtime (`data-email`, `data-email-subject`, `data-phone`) so they aren't in the HTML source; change the contact details there
 - `fonts/`: Cormorant Garamond + Inter woff2 (latin and latin-ext), the same @fontsource 5.3.0 files as the editor's font list (`oglinda-salii/src/lib/fonts.js`), with their OFL licenses
 - `img/src/`: original photos and template previews (not used by the pages directly)
